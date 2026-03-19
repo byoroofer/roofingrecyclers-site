@@ -19,15 +19,17 @@ export function CtaBand({ items }: CtaBandProps) {
         </p>
       </div>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+      <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5">
         {items.map((item) => (
           <Link
-            className="group flex items-center justify-between rounded-[1.5rem] border border-white/12 bg-white/6 px-5 py-5 text-sm font-semibold text-[var(--rr-text)] transition hover:bg-white/10"
+            className="group flex min-h-[8.5rem] flex-col justify-between gap-5 rounded-[1.5rem] border border-white/12 bg-white/6 px-5 py-5 text-sm font-semibold text-[var(--rr-text)] transition hover:bg-white/10"
             href={item.href}
             key={item.href}
           >
-            <span className="max-w-[11rem] leading-6">{item.label}</span>
-            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+            <span className="max-w-none text-balance leading-6">{item.label}</span>
+            <div className="flex justify-end">
+              <ArrowRight className="h-4 w-4 shrink-0 transition group-hover:translate-x-1" />
+            </div>
           </Link>
         ))}
       </div>

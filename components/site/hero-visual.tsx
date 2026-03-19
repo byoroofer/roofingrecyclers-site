@@ -63,7 +63,7 @@ export function HeroVisual() {
             </p>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 2xl:grid-cols-3">
             {loopCards.map((item) => (
               <div className="surface-card min-h-full" key={item.title}>
                 <h3 className="text-base font-semibold text-[var(--rr-text)]">{item.title}</h3>
@@ -73,7 +73,7 @@ export function HeroVisual() {
           </div>
 
           <div className="surface-card">
-            <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--rr-muted)]">
                   Business-plan logic
@@ -83,7 +83,7 @@ export function HeroVisual() {
                   product relevance, with room for deeper vertical integration over time.
                 </p>
               </div>
-              <div className="grid min-w-[14rem] grid-cols-3 gap-3">
+              <div className="grid gap-3 sm:grid-cols-3 xl:min-w-[14rem]">
                 {["Gate value", "RAS output", "Paving link"].map((item) => (
                   <div
                     className="rounded-2xl border border-white/10 bg-white/6 px-4 py-4 text-center text-sm text-[var(--rr-text)]"

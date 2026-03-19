@@ -8,7 +8,7 @@ interface ProcessDiagramProps {
 
 export function ProcessDiagram({ steps }: ProcessDiagramProps) {
   return (
-    <div className="grid gap-4 lg:grid-cols-4">
+    <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-4">
       {steps.map((step, index) => (
         <Reveal className="surface-card relative" delay={index * 0.05} key={step.title}>
           <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--rr-amber)]">
