@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --rr-background: #09110d;
+  --rr-background-soft: #0d1712;
+  --rr-panel: rgba(16, 24, 20, 0.8);
+  --rr-panel-strong: #121d18;
+  --rr-text: #edf2ec;
+  --rr-muted: #9cac9f;
+  --rr-steel: #6f8078;
+  --rr-accent: #2b7a4d;
+  --rr-accent-strong: #37955f;
+  --rr-amber: #c98a2d;
+  --rr-line: rgba(255, 255, 255, 0.1);
+  --rr-shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(43, 122, 77, 0.24), transparent 28%),
+    radial-gradient(circle at 86% 0%, rgba(201, 138, 45, 0.14), transparent 22%),
+    linear-gradient(180deg, #0a120e 0%, #09110d 42%, #070c0a 100%);
+  color: var(--rr-text);
+  font-family: var(--font-body), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 7.5rem 7.5rem;
+  mask-image: radial-gradient(circle at center, black, transparent 84%);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: auto -15% -18rem auto;
+  width: 34rem;
+  height: 34rem;
+  z-index: -1;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(43, 122, 77, 0.22), transparent 68%);
+  filter: blur(36px);
+  pointer-events: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(201, 138, 45, 0.32);
+  color: #ffffff;
+}
+
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid rgba(201, 138, 45, 0.9);
+  outline-offset: 2px;
+}
+
+.display-title,
+.section-title,
+.page-hero h1 {
+  font-family: var(--font-display), sans-serif;
+}
+
+.display-title {
+  margin: 0;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
+}
+
+.section-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.section-copy {
+  margin: 0;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.85;
+  color: var(--rr-muted);
+  text-wrap: pretty;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: fit-content;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.55rem 0.8rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rr-amber);
+}
+
+.page-hero {
+  display: grid;
+  gap: 1.35rem;
+  padding-block: 2rem 1rem;
+}
+
+.section-shell {
+  padding-block: clamp(3rem, 5vw, 4.75rem);
+}
+
+.section-heading {
+  display: grid;
+  gap: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+.surface-card,
+.stat-card {
+  border: 1px solid var(--rr-line);
+  border-radius: 1.75rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.028)),
+    rgba(16, 24, 20, 0.7);
+  padding: clamp(1.35rem, 2.4vw, 1.75rem);
+  box-shadow: var(--rr-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.stat-card {
+  min-height: 100%;
+}
+
+.stat-value {
+  display: block;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  color: var(--rr-text);
+}
+
+.field {
+  display: grid;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--rr-text);
+}
+
+.input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.15rem;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.95rem 1rem;
+  color: var(--rr-text);
+  transition:
+    border-color 140ms ease,
+    background-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.input::placeholder {
+  color: rgba(156, 172, 159, 0.72);
+}
+
+.input:focus {
+  border-color: rgba(43, 122, 77, 0.9);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 4px rgba(43, 122, 77, 0.14);
+  outline: none;
+}
+
+@media (max-width: 720px) {
+  .display-title {
+    font-size: clamp(3rem, 16vw, 4.4rem);
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 11vw, 2.6rem);
+  }
+}

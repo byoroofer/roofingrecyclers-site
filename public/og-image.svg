@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#09110D" />
+  <rect x="52" y="52" width="1096" height="526" rx="36" fill="url(#panel)" stroke="rgba(255,255,255,0.1)" />
+  <path d="M0 0h1200v630H0z" fill="url(#glow)" opacity=".5" />
+  <path d="M780 124h232v232H780z" fill="url(#grid)" opacity=".35" />
+  <path d="M808 396h272" stroke="#2B7A4D" stroke-width="8" stroke-linecap="round" />
+  <path d="M808 436h200" stroke="#C98A2D" stroke-width="8" stroke-linecap="round" />
+  <path d="M808 476h248" stroke="white" stroke-opacity=".38" stroke-width="8" stroke-linecap="round" />
+  <rect x="108" y="120" width="86" height="86" rx="24" fill="#132018" stroke="rgba(255,255,255,0.12)" />
+  <path d="M151 84l54 54-11 11-43-43-43 43-11-11 54-54z" fill="#2B7A4D" />
+  <path d="M111 182V118h32c10 0 18 2.667 24 8 6.133 5.067 9.2 12.133 9.2 21.2 0 9.067-3.067 16.2-9.2 21.4-6 5.6-14 8.4-24 8.4h-32Zm21.2-15.8h10.4c4.4 0 7.867-1.067 10.4-3.2 2.533-2.267 3.8-5.467 3.8-9.6 0-4.133-1.267-7.333-3.8-9.6-2.533-2.267-6-3.4-10.4-3.4h-10.4v25.8Z" fill="#EDF2EC" />
+  <text x="108" y="292" fill="#C98A2D" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="5">
+    ROOFING RECYCLERS
+  </text>
+  <text x="108" y="376" fill="#EDF2EC" font-family="Arial, sans-serif" font-size="70" font-weight="700">
+    Turn roofing waste
+  </text>
+  <text x="108" y="454" fill="#EDF2EC" font-family="Arial, sans-serif" font-size="70" font-weight="700">
+    into infrastructure value.
+  </text>
+  <text x="108" y="526" fill="#9CAC9F" font-family="Arial, sans-serif" font-size="28">
+    Asphalt shingle recycling infrastructure for contractors,
+  </text>
+  <text x="108" y="562" fill="#9CAC9F" font-family="Arial, sans-serif" font-size="28">
+    municipalities, manufacturers, and capital partners.
+  </text>
+  <defs>
+    <linearGradient id="panel" x1="600" y1="52" x2="600" y2="578" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111B16" />
+      <stop offset="1" stop-color="#0B120F" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(1030 80) rotate(121.892) scale(514.386 720.613)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B7A4D" stop-opacity=".35" />
+      <stop offset="1" stop-color="#2B7A4D" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="58" height="58" patternUnits="userSpaceOnUse">
+      <path d="M58 0H0V58" stroke="white" stroke-opacity=".12" />
+    </pattern>
+  </defs>
+</svg>
