@@ -7,13 +7,14 @@ import {
   aboutPillars,
   aboutVisionTimeline,
   founderHighlights,
+  founderStoryParagraphs,
 } from "@/content/site-content";
 import { buildMetadata } from "@/lib/site/metadata";
 
 export const metadata = buildMetadata({
   title: "About Roofing Recyclers | Industrial recovery platform",
   description:
-    "Learn why Roofing Recyclers is being built as a scalable industrial platform for asphalt shingle recycling and downstream infrastructure value.",
+    "Learn why Roofing Recyclers is being built as a scalable industrial platform for asphalt shingle recycling, RAS, and downstream infrastructure value.",
   path: "/about",
 });
 
@@ -44,7 +45,7 @@ export default function AboutPage() {
         eyebrow="Founder story"
         title="A roofing-native founder position with policy and execution fluency"
       >
-        <FounderStory highlights={founderHighlights} />
+        <FounderStory details={founderStoryParagraphs} highlights={founderHighlights} />
       </SectionShell>
 
       <SectionShell

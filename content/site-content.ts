@@ -38,22 +38,22 @@ export const allSitePaths = [
 
 export const heroStats: StatItem[] = [
   {
-    value: "Millions",
-    label: "of tons still trapped in disposal channels",
+    value: "10M+",
+    label: "estimated tons still moving through disposal channels annually",
     detail:
-      "Asphalt shingles represent a large, under-recovered waste stream with national infrastructure implications.",
+      "The waste stream is large enough to justify real regional infrastructure, not just isolated recycling pilots.",
+  },
+  {
+    value: "RAS",
+    label: "turns processed shingles into paving-relevant feedstock",
+    detail:
+      "Recycled asphalt shingles connect roofing recovery to downstream asphalt applications when quality and specifications are managed carefully.",
   },
   {
     value: "Dual-sided",
-    label: "economics from intake to output",
+    label: "economics built around intake value and output value",
     detail:
-      "The business model is designed around waste-handling value, processed material value, and future downstream integration.",
-  },
-  {
-    value: "Regional",
-    label: "hub strategy built for repeatable scale",
-    detail:
-      "Facility density, logistics coordination, and partner expansion are meant to compound together over time.",
+      "The business plan is designed to create leverage at the gate, through processing, and over time in downstream product channels.",
   },
 ];
 
@@ -64,19 +64,19 @@ export const problemCards: ValueCard[] = [
       "A large roofing waste stream still moves through fragmented disposal channels that create cost, congestion, and lost value.",
   },
   {
-    title: "Missed material value",
+    title: "Stranded asphaltic value",
     description:
-      "Shingles contain asphaltic value that can support paving-related use cases instead of remaining stranded waste.",
+      "Asphalt shingles contain material that can support paving-related pathways instead of remaining stranded as landfill waste.",
   },
   {
-    title: "Domestic resource relevance",
+    title: "Public and private pressure",
     description:
-      "Recovered material can strengthen regional infrastructure supply, circular manufacturing logic, and petroleum-offset framing.",
+      "Manufacturers, municipalities, contractors, and landfill operators all have reasons to seek more credible diversion pathways.",
   },
   {
-    title: "Category white space",
+    title: "Underbuilt infrastructure",
     description:
-      "The market opportunity is real, but the operating infrastructure and national brand leadership remain underbuilt.",
+      "The market opportunity is real, but the operating network, public narrative, and trusted category leadership remain underbuilt.",
   },
 ];
 
@@ -85,17 +85,17 @@ export const modelSteps: ProcessStep[] = [
     eyebrow: "01",
     title: "Inbound material capture",
     description:
-      "Roofing contractors, facilities, and public-sector partners direct tear-off shingles into a structured intake pathway.",
+      "Roofing contractors, facilities, manufacturers, and public-sector partners direct tear-off or cut-off shingles into a structured intake pathway.",
   },
   {
     eyebrow: "02",
     title: "Sorting and processing",
     description:
-      "Material is evaluated, prepared, and processed into recycled asphalt shingle feedstock with quality controls in mind.",
+      "Material is evaluated, prepared, and processed into recycled asphalt shingle feedstock with contamination controls and quality discipline in mind.",
   },
   {
     eyebrow: "03",
-    title: "Downstream product integration",
+    title: "RAS and downstream integration",
     description:
       "Recovered material is positioned for paving and related product pathways where infrastructure demand can absorb real volume.",
   },
@@ -114,7 +114,7 @@ export const stakeholderCards: StakeholderCard[] = [
       "A more intelligent disposal pathway with sustainability credibility, operational structure, and future participation upside.",
     bullets: [
       "Lower dependence on landfill-only disposal",
-      "Stronger customer and municipal sustainability narrative",
+      "Stronger customer, municipal, and commercial sustainability narrative",
       "Future certification and network participation potential",
     ],
     href: "/contractors",
@@ -122,10 +122,10 @@ export const stakeholderCards: StakeholderCard[] = [
   {
     title: "Manufacturers",
     description:
-      "A serious circular-material partner for stewardship strategy, recovery alignment, and broader ecosystem participation.",
+      "A serious circular-material partner for stewardship strategy, cut-off waste recovery, and broader ecosystem participation.",
     bullets: [
       "Expanded waste-diversion positioning",
-      "Potential feedstock and recovery collaboration",
+      "Potential recovery and inbound-volume collaboration",
       "Long-term category leadership alignment",
     ],
     href: "/manufacturers",
@@ -136,7 +136,7 @@ export const stakeholderCards: StakeholderCard[] = [
       "A route toward landfill relief, diversion performance, and public-value outcomes tied to infrastructure instead of simple disposal.",
     bullets: [
       "Reduced pressure on local disposal channels",
-      "Better alignment with diversion goals",
+      "Better alignment with diversion and procurement goals",
       "Public-private partnership opportunities",
     ],
     href: "/municipalities",
@@ -167,43 +167,48 @@ export const stakeholderCards: StakeholderCard[] = [
 
 export const impactMetrics: StatItem[] = [
   {
-    value: "250K+",
-    label: "illustrative annual regional throughput capacity",
+    value: "10M+",
+    label: "tons in the category-scale U.S. waste stream",
     detail:
-      "A planning placeholder for how a scaled hub model could communicate processing potential once live reporting is active.",
+      "A material stream this large supports a far bigger industrial conversation than a niche sustainability program.",
   },
   {
-    value: "Millions",
-    label: "of square feet of roofing represented",
+    value: "RAS",
+    label: "links roofing waste to paving-product relevance",
     detail:
-      "A future contractor-native metric designed to translate tonnage into a more intuitive operational lens.",
+      "Processed shingles become economically more meaningful when they have a credible downstream use case instead of a disposal endpoint.",
   },
   {
-    value: "Petroleum",
-    label: "offset framing for recovered material value",
+    value: "Oil-offset",
+    label: "logic is built into the founding thesis",
     detail:
-      "An impact layer intended to connect recycled shingles with broader resource-efficiency outcomes.",
+      "The public site is prepared to report petroleum-offset metrics carefully once live operating data becomes available.",
   },
   {
     value: "Regional",
-    label: "landfill relief and infrastructure upside",
+    label: "hub strategy is designed for repeatable rollout",
     detail:
-      "Diversion, logistics, and downstream utilization are meant to be measured together rather than treated as separate stories.",
+      "The model depends on localized supply, logistics, and offtake relationships that can compound over time.",
   },
 ];
 
 export const whyNowBullets = [
   "Infrastructure demand and paving-market relevance make asphalt shingle recovery more strategically important than a generic recycling story.",
-  "Landfill pressure, procurement scrutiny, and sustainability expectations are increasing the value of measurable diversion pathways.",
-  "The category remains fragmented enough that disciplined execution, regional density, and partner trust can still create outsized early advantage.",
-  "Founder access across roofing, construction, insurance-claims context, and policy engagement creates a credible path to market entry.",
+  "Manufacturers, contractors, municipalities, and landfill operators all have incentive to support better recovery pathways when the operating model is credible.",
+  "Procurement language, recycled-content interest, and domestic-material narratives can widen adoption without depending on one single policy outcome.",
+  "Founder access across roofing networks, construction context, public affairs, and industry media creates a more realistic path to early traction.",
 ];
 
 export const founderHighlights = [
-  "Roofing and restoration industry credibility",
+  "Roofing and restoration industry credibility with contractor network access",
   "Construction and insurance-claims operating perspective",
-  "Policy and regulatory engagement experience",
-  "Relationship-driven contractor and stakeholder network access",
+  "Policy, legislative, and regulatory engagement experience",
+  "Relationship-driven access across roofers, media, and strategic stakeholders",
+];
+
+export const founderStoryParagraphs = [
+  "TJ Ware comes to Roofing Recyclers from roofing, restoration, construction, and insurance-claims work rather than from abstract sustainability branding. That operator lens matters in a category where contractor trust, material behavior, and field logistics determine whether supply actually shows up.",
+  "His background also includes policy engagement, public-facing industry leadership, and relationship building across business leaders, trade voices, and public stakeholders. For a company that must align roofers, municipalities, manufacturers, landfills, and capital partners, that relationship density is part of the business plan.",
 ];
 
 export const ctaSegments = [
@@ -221,9 +226,9 @@ export const faqItems: FaqItem[] = [
       "No. The thesis is broader: recover roofing waste, convert it into infrastructure value, and build the regional operating network around that material flow.",
   },
   {
-    question: "Is this only an environmental story?",
+    question: "What is RAS?",
     answer:
-      "No. The company is framed around landfill diversion and petroleum-offset logic, but also around industrial economics, logistics, and downstream materials relevance.",
+      "RAS stands for recycled asphalt shingles. In practical terms, it is processed shingle material prepared for paving-related use rather than left as landfill waste.",
   },
   {
     question: "Who should reach out now?",
@@ -236,7 +241,7 @@ export const aboutHero: PageHeroContent = {
   eyebrow: "Mission and momentum",
   title: "Building the public foundation for a category-defining industrial company.",
   description:
-    "Roofing Recyclers is being built to connect roofing waste recovery, landfill diversion, materials processing, and downstream infrastructure value inside one scalable platform.",
+    "Roofing Recyclers is being built to connect roofing waste recovery, RAS processing, landfill diversion, and downstream infrastructure value inside one scalable platform.",
 };
 
 export const aboutPillars: ValueCard[] = [
@@ -246,9 +251,9 @@ export const aboutPillars: ValueCard[] = [
       "The opportunity matters because it can be operationally valuable, not because it sounds good in a brochure.",
   },
   {
-    title: "Industrial execution over concept slides",
+    title: "Relationship-led execution",
     description:
-      "This model depends on real intake, real processing discipline, real logistics, and real offtake relationships.",
+      "This model depends on real intake, public-private coordination, real logistics, and real offtake relationships rather than concept slides alone.",
   },
   {
     title: "National ambition with regional sequencing",
@@ -259,19 +264,19 @@ export const aboutPillars: ValueCard[] = [
 
 export const aboutVisionTimeline: TimelineItem[] = [
   {
-    title: "Phase 1: partner alignment",
+    title: "Phase 1: supply and siting alignment",
     description:
-      "Validate intake relationships, processing pathways, and stakeholder trust inside the first target markets.",
+      "Validate intake relationships, municipal or facility alignment, and processing pathways inside the first target markets.",
   },
   {
-    title: "Phase 2: regional density",
+    title: "Phase 2: regional density and RAS credibility",
     description:
-      "Grow through repeatable hub logic, stronger logistics coordination, and larger-volume participation programs.",
+      "Grow through repeatable hub logic, stronger logistics coordination, and more credible downstream material positioning.",
   },
   {
-    title: "Phase 3: downstream integration",
+    title: "Phase 3: downstream integration and reporting",
     description:
-      "Deepen ties into paving products, asphalt ecosystem relationships, and broader national infrastructure relevance.",
+      "Deepen ties into paving products, asphalt ecosystem relationships, and the reporting layer needed for larger capital and public-sector conversations.",
   },
 ];
 
@@ -279,14 +284,14 @@ export const howItWorksHero: PageHeroContent = {
   eyebrow: "Operational model",
   title: "A practical recycling system designed to scale like infrastructure.",
   description:
-    "The operating model is built around managed intake, processing discipline, downstream product logic, and regional network buildout.",
+    "The operating model is built around managed intake, RAS processing discipline, downstream product logic, and regional network buildout.",
 };
 
 export const hubStrategyItems = [
-  "Contractor and facility intake relationships that can generate recurring volume",
-  "Sorting, contamination management, and processing protocols built for consistency",
-  "Logistics coordination across waste movement, processing, and downstream delivery",
-  "Regional market selection based on density, partner readiness, and product-pathway fit",
+  "Contractor, facility, and manufacturer relationships that can generate recurring inbound volume",
+  "Sorting, contamination management, and processing protocols built to support RAS credibility",
+  "Municipal or landfill host logic where siting and environmental controls can be aligned early",
+  "Regional market selection based on density, logistics, and downstream asphalt or paving fit",
 ];
 
 export const operatingPrinciples: ValueCard[] = [
@@ -296,14 +301,37 @@ export const operatingPrinciples: ValueCard[] = [
       "Volume matters, but disciplined intake standards matter more if the output is going to support real downstream use.",
   },
   {
-    title: "Traceable processing",
+    title: "Spec-aware processing",
     description:
-      "Processing quality, contamination controls, and reporting are core trust layers for contractors, municipalities, and manufacturers.",
+      "Processing quality, contamination controls, and reporting are core trust layers for contractors, municipalities, manufacturers, and downstream users.",
+  },
+  {
+    title: "Regulatory readiness",
+    description:
+      "Environmental controls, runoff considerations, and jurisdiction-specific requirements need to be addressed early, not after a site is built.",
   },
   {
     title: "Demand-linked expansion",
     description:
       "New regions should be opened where supply, logistics, and downstream utilization can reinforce one another.",
+  },
+];
+
+export const rasValueCards: ValueCard[] = [
+  {
+    title: "RAS, in practical terms",
+    description:
+      "Recycled asphalt shingles are processed shingle millings prepared for paving-related use rather than left as landfill waste.",
+  },
+  {
+    title: "Why it matters economically",
+    description:
+      "RAS creates a bridge between waste diversion and downstream material value, which is why the category can matter to operators and capital alike.",
+  },
+  {
+    title: "Why processing discipline matters",
+    description:
+      "Contamination control, consistent sizing, and market-specific specifications determine whether recovered shingles become credible feedstock.",
   },
 ];
 
@@ -351,9 +379,9 @@ export const solutionDetailCards: StakeholderCard[] = [
   {
     title: "Paving and Asphalt Ecosystem",
     description:
-      "Recovered shingle feedstock can become more strategic when connected to regional processing discipline and offtake planning.",
+      "Recovered shingle feedstock becomes more strategic when connected to regional processing discipline, specifications, and offtake planning.",
     bullets: [
-      "Feedstock relevance",
+      "RAS feedstock relevance",
       "Supply-chain resilience framing",
       "Longer-term product integration potential",
     ],
@@ -376,7 +404,7 @@ export const impactHero: PageHeroContent = {
   eyebrow: "Measured outcomes",
   title: "Impact should read like operational performance, not charity copy.",
   description:
-    "Landfill diversion, petroleum-offset framing, and circular-economy language only matter if the company can prove real throughput and real material use.",
+    "Landfill diversion, petroleum-offset framing, and circular-economy language only matter if the company can prove real throughput and real RAS utilization.",
 };
 
 export const impactPillars: ValueCard[] = [
@@ -386,9 +414,9 @@ export const impactPillars: ValueCard[] = [
       "A measurable reduction pathway for one of the largest roofing waste streams in the market.",
   },
   {
-    title: "Material resilience",
+    title: "Petroleum-offset logic",
     description:
-      "Recovered shingles can support a more resource-efficient downstream materials ecosystem.",
+      "Recovered shingles carry asphaltic value that can support a more resource-efficient downstream materials ecosystem.",
   },
   {
     title: "Regional economic value",
@@ -423,12 +451,35 @@ export const partnersHero: PageHeroContent = {
 };
 
 export const partnerTypes = [
-  "Roofing contractors and restoration networks",
-  "Municipalities, counties, and landfill operators",
-  "Manufacturers and stewardship-oriented materials partners",
+  "Roofing contractors, restoration groups, and large-volume material suppliers",
+  "Municipalities, counties, transfer stations, and landfill operators",
+  "Manufacturers, distributors, and stewardship-oriented materials partners",
   "Processing, recycling, hauling, and logistics operators",
-  "Paving and downstream materials ecosystem partners",
-  "Policy, nonprofit, and certification allies",
+  "Asphalt plants, pavers, and downstream materials ecosystem partners",
+  "Policy, nonprofit, certification, and industry-association allies",
+];
+
+export const partnershipLeverageCards: ValueCard[] = [
+  {
+    title: "Supply-side partnerships",
+    description:
+      "Recurring inbound volume is built through roofers, distributors, manufacturers, and facilities that need a better outlet than disposal-only handling.",
+  },
+  {
+    title: "Siting and municipal alignment",
+    description:
+      "Landfills, transfer stations, and municipalities can become meaningful partners when diversion goals and operating practicality line up.",
+  },
+  {
+    title: "Downstream market access",
+    description:
+      "The stronger the paving, hauling, and asphalt relationships are, the more credible the material story becomes.",
+  },
+  {
+    title: "Coalition and policy support",
+    description:
+      "Industry voices, associations, and public-affairs allies help translate a technical recycling story into a bigger infrastructure narrative.",
+  },
 ];
 
 export const partnerEngagementSteps: TimelineItem[] = [
@@ -453,22 +504,86 @@ export const investorHero: PageHeroContent = {
   eyebrow: "Investor / capital partners",
   title: "An early industrial platform with infrastructure-scale upside.",
   description:
-    "This is not positioned as a niche sustainability site. It is the public face of a regional-to-national materials recovery platform with real logistics, policy, and operating leverage.",
+    "This is not positioned as a niche sustainability site. It is the public face of a regional-to-national materials recovery platform built around RAS, logistics, policy fluency, and relationship-led execution.",
 };
 
 export const investorPoints = [
-  "Large persistent waste stream with fragmented handling and uneven recovery infrastructure",
-  "Potential economics on both inbound material capture and processed downstream value",
-  "Hub expansion logic with network-density effects instead of one-off project economics",
-  "Founder with roofing credibility, operating context, public-affairs fluency, and market access",
-  "Room to build a trusted category leader in a space that is still structurally underdeveloped",
+  "Estimated 10M+ ton annual shingle waste stream with low recovery and embedded asphaltic value",
+  "RAS creates a bridge from roofing waste to paving-relevant feedstock and potential product integration",
+  "Economic logic can exist at intake, through processing, and over time in downstream product channels",
+  "Execution depends on municipal fit, regulatory fluency, and partner density as much as equipment",
+  "Founder brings roofing credibility, public-affairs fluency, and industry relationship access in a still-underbuilt category",
+];
+
+export const businessPlanCards: ValueCard[] = [
+  {
+    title: "Intake economics",
+    description:
+      "A useful regional platform starts by becoming a better outlet for tear-off and cut-off shingles than landfill-only handling.",
+  },
+  {
+    title: "Processing discipline",
+    description:
+      "Value depends on converting raw shingle volume into consistent, spec-aware material rather than just moving debris.",
+  },
+  {
+    title: "Downstream offtake",
+    description:
+      "Paving and asphalt relationships are the bridge from waste diversion to product-market relevance.",
+  },
+  {
+    title: "Vertical integration path",
+    description:
+      "The longer-term business plan contemplates tighter alignment with paving plants and finished-product channels where economics justify it.",
+  },
+];
+
+export const regulatoryApproachCards: ValueCard[] = [
+  {
+    title: "Municipal and landfill alignment",
+    description:
+      "Siting and partnership models work better when host facilities, local governments, and diversion goals are aligned from the start.",
+  },
+  {
+    title: "Public-affairs fluency",
+    description:
+      "The category can benefit from clear communication around landfill relief, recycled-content procurement, and domestic-material resilience.",
+  },
+  {
+    title: "Careful compliance posture",
+    description:
+      "Execution depends on understanding environmental, runoff, and jurisdiction-specific requirements early, not treating regulation as an afterthought.",
+  },
+];
+
+export const relationshipNetworkCards: ValueCard[] = [
+  {
+    title: "Roofing contractor reach",
+    description:
+      "The founding thesis is rooted in real relationships across roofing contractors, restoration leaders, and industry operators.",
+  },
+  {
+    title: "Manufacturer and distributor access",
+    description:
+      "Conversations across the supply chain can surface inbound volume, partnership opportunities, and market intelligence earlier than cold market entry.",
+  },
+  {
+    title: "Policy and regulator familiarity",
+    description:
+      "State-level legislative and regulatory familiarity supports a more realistic approach to category building and municipal conversations.",
+  },
+  {
+    title: "Media and coalition building",
+    description:
+      "Conference visibility, trade credibility, and audience reach can accelerate trust, education, and coalition formation around the category.",
+  },
 ];
 
 export const investorMoatCards: ValueCard[] = [
   {
-    title: "Feedstock access",
+    title: "Feedstock control",
     description:
-      "Recurring intake relationships can become a defensible operating advantage when tied to trust, convenience, and volume discipline.",
+      "Recurring intake relationships become more defensible when they are tied to trust, convenience, volume discipline, and real downstream pathways.",
   },
   {
     title: "Regional infrastructure density",
@@ -476,7 +591,7 @@ export const investorMoatCards: ValueCard[] = [
       "Once a region has aligned intake, processing, logistics, and offtake, the platform becomes harder to replicate with shallow competition.",
   },
   {
-    title: "Cross-sector relationships",
+    title: "Cross-sector access",
     description:
       "Execution requires roofing credibility, public-sector fluency, and private-market coordination at the same time.",
   },
