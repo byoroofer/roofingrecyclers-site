@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+  "updated_at": "2026-03-24T17:50:42.0510837-05:00",
   "records": [
     {
       "id": "KNOW-001",
@@ -9,7 +9,7 @@
       "confidence": "high",
       "source": "Repo inspection on 2026-03-24",
       "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
-      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:43:37.2381162-05:00",
       "status": "active",
       "related_projects": [
         "roofingrecyclers-site"
@@ -25,7 +25,7 @@
       "confidence": "high",
       "source": "Confirmed deployment and middleware setup during March 2026 work",
       "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
-      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:43:37.2381162-05:00",
       "status": "active",
       "related_projects": [
         "roofingrecyclers-site"
@@ -42,7 +42,7 @@
       "confidence": "high",
       "source": "Repo inspection on 2026-03-24",
       "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
-      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:43:37.2381162-05:00",
       "status": "active",
       "related_projects": [
         "roofingrecyclers-site"
@@ -59,7 +59,7 @@
       "confidence": "high",
       "source": "Observed repeatedly during March 2026 verification work",
       "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
-      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:43:37.2381162-05:00",
       "status": "active",
       "related_projects": [
         "roofingrecyclers-site"
@@ -75,7 +75,7 @@
       "confidence": "high",
       "source": "Confirmed user direction and existing site goals",
       "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
-      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:43:37.2381162-05:00",
       "status": "active",
       "related_projects": [
         "roofingrecyclers-site"
@@ -92,7 +92,7 @@
       "confidence": "high",
       "source": "Confirmed writing approach from investor-page work",
       "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
-      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:43:37.2381162-05:00",
       "status": "active",
       "related_projects": [
         "roofingrecyclers-site"
@@ -109,7 +109,7 @@
       "confidence": "high",
       "source": "User feedback and follow-up hero visual fixes",
       "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
-      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:43:37.2381162-05:00",
       "status": "active",
       "related_projects": [
         "roofingrecyclers-site"
@@ -125,7 +125,7 @@
       "confidence": "high",
       "source": "Repo route inspection on 2026-03-24",
       "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
-      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:43:37.2381162-05:00",
       "status": "active",
       "related_projects": [
         "roofingrecyclers-site"
@@ -141,13 +141,45 @@
       "confidence": "high",
       "source": "Project memory initialization decision on 2026-03-24",
       "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
-      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:43:37.2381162-05:00",
       "status": "active",
       "related_projects": [
         "roofingrecyclers-site"
       ],
       "related_files": [
         "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
+    },
+    {
+      "id": "KNOW-010",
+      "category": "memory",
+      "fact": "The project memory system was committed and pushed to the repo beginning with commit 90d9cb3, so durable memory is no longer only local state.",
+      "confidence": "high",
+      "source": "Git commit and push performed on 2026-03-24",
+      "first_recorded_at": "2026-03-24T17:43:37.2381162-05:00",
+      "last_confirmed_at": "2026-03-24T17:43:37.2381162-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
+    },
+    {
+      "id": "KNOW-011",
+      "category": "design",
+      "fact": "The home hero reads best when the right-hand visual uses short overlay copy, one or two thesis blocks, and stacked operating rows instead of multi-column mini-cards with long paragraphs.",
+      "confidence": "high",
+      "source": "Direct user screenshot feedback and hero redesign on 2026-03-24",
+      "first_recorded_at": "2026-03-24T17:50:42.0510837-05:00",
+      "last_confirmed_at": "2026-03-24T17:50:42.0510837-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\hero-visual.tsx"
       ]
     }
   ]

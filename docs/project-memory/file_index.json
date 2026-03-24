@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+  "updated_at": "2026-03-24T17:50:42.0510837-05:00",
   "files": [
     {
       "path": "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\project_profile.json",
       "purpose": "Stable identity and environment profile for the project.",
       "criticality": "high",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:50:42.0510837-05:00",
       "notes": "Canonical memory file for project identity.",
       "classification": "docs"
     },
@@ -14,7 +14,7 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\current_state.json",
       "purpose": "Current truth about active phase, priorities, risks, and next steps.",
       "criticality": "high",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:50:42.0510837-05:00",
       "notes": "Read first in future sessions after project_profile.json.",
       "classification": "docs"
     },
@@ -22,7 +22,7 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\tasks.json",
       "purpose": "Project-level durable task tracker across sessions.",
       "criticality": "high",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "Tracks active, backlog, and completed workstreams.",
       "classification": "docs"
     },
@@ -30,7 +30,7 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\app\\page.tsx",
       "purpose": "Home page route and highest-visibility public narrative.",
       "criticality": "high",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "Often changes during visual polish and narrative updates.",
       "classification": "user-facing"
     },
@@ -38,7 +38,7 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\app\\investors\\page.tsx",
       "purpose": "Capital Partners page with investor-facing RAS and business-plan content.",
       "criticality": "high",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "Key route for future investor funnel work.",
       "classification": "user-facing"
     },
@@ -46,15 +46,15 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\components\\site\\hero-visual.tsx",
       "purpose": "Home-page hero visual composition and supporting RAS cards.",
       "criticality": "high",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
-      "notes": "Sensitive to cramped layout; keep composition roomy.",
+      "last_touched": "2026-03-24T17:50:42.0510837-05:00",
+      "notes": "Sensitive to cramped layout; current version uses a full-width media block, thesis cards, and stacked operating rows to preserve hierarchy.",
       "classification": "user-facing"
     },
     {
       "path": "D:\\Playground\\roofingrecyclers-site\\components\\site\\cta-band.tsx",
       "purpose": "Segmented CTA card band used on the home page.",
       "criticality": "medium",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "Long labels require layout tolerance.",
       "classification": "user-facing"
     },
@@ -62,7 +62,7 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\components\\site\\process-diagram.tsx",
       "purpose": "Reusable process-step card grid for operational model sections.",
       "criticality": "medium",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "Avoid forcing too many columns at constrained widths.",
       "classification": "user-facing"
     },
@@ -70,7 +70,7 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\content\\site-content.ts",
       "purpose": "Centralized navigation and marketing copy source for the site.",
       "criticality": "high",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "Primary content registry for route copy and card content.",
       "classification": "docs"
     },
@@ -78,7 +78,7 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
       "purpose": "Server-side API endpoint for lead submission validation and insert handling.",
       "criticality": "high",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "Uses service-role Supabase access on the server.",
       "classification": "server-side"
     },
@@ -86,7 +86,7 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\supabase\\lead_capture_schema.sql",
       "purpose": "Source-of-truth SQL for the inbound_leads table and related indexes/trigger.",
       "criticality": "high",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "Used when setting up or validating Supabase schema.",
       "classification": "data"
     },
@@ -94,7 +94,7 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\lib\\site\\config.ts",
       "purpose": "Site-wide name, description, URL, and OG image settings.",
       "criticality": "medium",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "SEO and structured-data descriptions depend on this file.",
       "classification": "config"
     },
@@ -102,7 +102,7 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\middleware.ts",
       "purpose": "Canonical host redirect logic for www to apex handling.",
       "criticality": "medium",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "Supports the apex-domain canonical decision.",
       "classification": "infra"
     },
@@ -110,7 +110,7 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\public\\images\\deck",
       "purpose": "Public deck-derived images used to support the RAS and industry-credibility narrative.",
       "criticality": "medium",
-      "last_touched": "2026-03-24T17:39:40.5860397-05:00",
+      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "Includes shingle, road-roller, and industry-network imagery.",
       "classification": "user-facing"
     }

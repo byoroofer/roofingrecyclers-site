@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "current_phase": "Post-launch MVP / live polish",
-  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on investor-facing business-plan content and home-page hero layout cleanup.",
+  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on investor-facing business-plan content, rebuilding the home-page hero visual after direct user screenshot feedback, and initializing the durable project memory system.",
   "active_workstreams": [
     {
       "name": "Marketing site polish",
@@ -21,17 +21,17 @@
     {
       "name": "Project memory system",
       "status": "active",
-      "notes": "Initialized on 2026-03-24 in docs/project-memory."
+      "notes": "Initialized in docs/project-memory and versioned in git on 2026-03-24."
     }
   ],
   "current_priorities": [
-    "Preserve durable project state in the new memory system.",
-    "Continue visual QA and refinement on the home page and other high-visibility sections.",
+    "Use docs/project-memory as the first-read source of truth in future sessions.",
+    "Validate the rebuilt home-page hero and continue visual QA on other high-visibility sections.",
     "Plan the next investor-funnel and authority-content features."
   ],
   "blockers": [],
   "risks": [
-    "Visual quality still depends on human review across breakpoints; the user recently flagged home-page text layout quality.",
+    "Visual quality still depends on human review across breakpoints; the rebuilt home-page hero still needs user validation after deployment.",
     "Some future-facing metrics and impact statements are still placeholders until live data is connected.",
     "Public-facing policy and relationship copy must remain careful to avoid overclaiming."
   ],
@@ -42,7 +42,7 @@
   ],
   "known_issues": [
     "Standalone npm run typecheck can fail if executed before a build because tsconfig includes .next/types output; run build first or rerun typecheck after build.",
-    "Recent home-page layout changes have been deployed but still require user validation for final visual approval."
+    "The rebuilt home-page hero passed build and typecheck locally, but the user still needs to validate the visual result in production."
   ],
   "recent_changes": [
     {
@@ -63,16 +63,31 @@
     },
     {
       "timestamp": "2026-03-24T17:39:40.5860397-05:00",
-      "summary": "Initialized durable project memory system in docs/project-memory.",
+      "summary": "Initialized docs/project-memory and recorded durable project state, decisions, tasks, file index, and knowledge.",
       "related_files": [
         "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
+    },
+    {
+      "timestamp": "2026-03-24T17:43:37.2381162-05:00",
+      "summary": "Committed and pushed the project memory system so durable knowledge is versioned in the repo and remote backup.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
+    },
+    {
+      "timestamp": "2026-03-24T17:50:42.0510837-05:00",
+      "summary": "Rebuilt the home hero visual into a simpler full-width media block, thesis cards, and stacked operating sequence after the user flagged the prior text layout as unacceptable; local build and typecheck both passed.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\hero-visual.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\app\\page.tsx"
       ]
     }
   ],
   "next_steps": [
-    "Validate the current live home-page hero and overall responsive layout with the user.",
+    "Validate the rebuilt live home-page hero and overall responsive layout with the user after deployment finishes.",
     "Decide whether the next feature batch should focus on investor funnel improvements, authority content, or data/impact tooling.",
-    "Keep project memory updated at the end of each future session."
+    "Keep project memory updated at the end of each future session and commit memory changes when appropriate."
   ],
-  "updated_at": "2026-03-24T17:39:40.5860397-05:00"
+  "updated_at": "2026-03-24T17:50:42.0510837-05:00"
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+  "updated_at": "2026-03-24T17:50:42.0510837-05:00",
   "decisions": [
     {
       "id": "DEC-20260319-001",
@@ -99,10 +99,45 @@
         "Keep three mini-cards in a narrow row"
       ],
       "impact": "Home-page hero composition should remain roomier and more legible during future edits.",
-      "status": "active",
+      "status": "superseded",
       "supersedes": null,
       "related_files": [
         "D:\\Playground\\roofingrecyclers-site\\components\\site\\hero-visual.tsx"
+      ]
+    },
+    {
+      "id": "DEC-20260324-003",
+      "timestamp": "2026-03-24T17:43:37.2381162-05:00",
+      "title": "Version project memory immediately after initialization",
+      "decision": "Commit and push docs/project-memory as soon as the initial memory system is created.",
+      "reason": "The user's memory policy explicitly requires durable knowledge to be local-first and repo-backed, not left as untracked local files.",
+      "alternatives_considered": [
+        "Leave memory files untracked until a later code change",
+        "Stage the files without committing"
+      ],
+      "impact": "The memory system is now reconstructible from the repo and remote backup, not just the local workspace.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
+    },
+    {
+      "id": "DEC-20260324-004",
+      "timestamp": "2026-03-24T17:50:42.0510837-05:00",
+      "title": "Use a simplified stacked composition for the home hero visual",
+      "decision": "The home hero visual should use a full-width photo block, short thesis cards, and stacked operating-sequence rows instead of narrow nested text boxes.",
+      "reason": "Direct user screenshot feedback showed the prior hero composition still looked cramped and low-quality even after earlier spacing tweaks.",
+      "alternatives_considered": [
+        "Keep the previous hero structure and only reduce font sizes",
+        "Keep mini-cards and photo-overlay copy inside the constrained right-hand column"
+      ],
+      "impact": "The hero now has clearer hierarchy and more room for industrial/investor-grade copy without overflow-style composition problems.",
+      "status": "active",
+      "supersedes": "DEC-20260324-002",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\hero-visual.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\app\\page.tsx"
       ]
     }
   ]
