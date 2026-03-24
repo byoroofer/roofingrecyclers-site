@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+  "decisions": [
+    {
+      "id": "DEC-20260319-001",
+      "timestamp": "2026-03-19T14:43:11-05:00",
+      "title": "Use a centralized marketing content layer",
+      "decision": "Keep reusable marketing copy, navigation, cards, and page content in content/site-content.ts.",
+      "reason": "The site needs maintainable, CMS-friendly copy architecture without scattering text across many routes.",
+      "alternatives_considered": [
+        "Hardcode copy inside each page",
+        "Introduce a full CMS before the MVP site was stable"
+      ],
+      "impact": "Makes copy and narrative changes faster and more consistent across pages.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\content\\site-content.ts"
+      ]
+    },
+    {
+      "id": "DEC-20260319-002",
+      "timestamp": "2026-03-19T14:43:11-05:00",
+      "title": "Handle lead capture through a server-side Supabase route",
+      "decision": "Public forms submit to /api/leads, which validates payloads and inserts into public.inbound_leads using the service-role key on the server.",
+      "reason": "This keeps secrets server-side and preserves a clean, admin-friendly lead table.",
+      "alternatives_considered": [
+        "Direct client-side Supabase inserts",
+        "Third-party form handlers"
+      ],
+      "impact": "Secure lead capture is live and can be expanded later for CRM workflows.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\supabase\\lead_capture_schema.sql"
+      ]
+    },
+    {
+      "id": "DEC-20260319-003",
+      "timestamp": "2026-03-19T14:43:11-05:00",
+      "title": "Use the apex domain as canonical host",
+      "decision": "roofingrecyclers.com is the canonical public host, with www redirected to the apex domain.",
+      "reason": "This keeps brand presentation and SEO canonicalization straightforward.",
+      "alternatives_considered": [
+        "Use www as the primary canonical host"
+      ],
+      "impact": "Production routing, metadata, and middleware are aligned around the apex domain.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\middleware.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\site\\config.ts"
+      ]
+    },
+    {
+      "id": "DEC-20260319-004",
+      "timestamp": "2026-03-19T15:09:46-05:00",
+      "title": "Frame public investor and policy copy carefully",
+      "decision": "The site should present RAS, regulatory, manufacturer, and relationship advantages in strong but careful language without making unverified public claims.",
+      "reason": "The site needs to feel credible and ambitious while avoiding overstatement.",
+      "alternatives_considered": [
+        "Use more aggressive pitch-deck language directly on the public site"
+      ],
+      "impact": "Investor-facing copy is more durable for a public audience and easier to defend.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\investors\\page.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\content\\site-content.ts"
+      ]
+    },
+    {
+      "id": "DEC-20260324-001",
+      "timestamp": "2026-03-24T17:39:40.5860397-05:00",
+      "title": "Adopt docs/project-memory as canonical durable memory location",
+      "decision": "Initialize and maintain the project memory system inside docs/project-memory within the repo.",
+      "reason": "This location is local, versioned, easy to discover, and does not require separate mirroring for this repo.",
+      "alternatives_considered": [
+        ".project-memory",
+        "project-memory at repo root"
+      ],
+      "impact": "Future sessions can reconstruct project state directly from repo-backed JSON files.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
+    },
+    {
+      "id": "DEC-20260324-002",
+      "timestamp": "2026-03-24T17:39:40.5860397-05:00",
+      "title": "Keep the home hero visual in a stacked layout",
+      "decision": "The hero visual should avoid dense nested multi-column card layouts inside the constrained right-hand hero column.",
+      "reason": "User feedback showed the previous nested layout made text look cramped and low-quality.",
+      "alternatives_considered": [
+        "Keep nested side-by-side photo and card columns",
+        "Keep three mini-cards in a narrow row"
+      ],
+      "impact": "Home-page hero composition should remain roomier and more legible during future edits.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\hero-visual.tsx"
+      ]
+    }
+  ]
+}

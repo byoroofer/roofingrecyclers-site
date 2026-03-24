@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+  "records": [
+    {
+      "id": "KNOW-001",
+      "category": "architecture",
+      "fact": "content/site-content.ts is the main centralized source for navigation, marketing copy, card text, and route-level content objects.",
+      "confidence": "high",
+      "source": "Repo inspection on 2026-03-24",
+      "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\content\\site-content.ts"
+      ]
+    },
+    {
+      "id": "KNOW-002",
+      "category": "infrastructure",
+      "fact": "The public production host is roofingrecyclers.com, and www should redirect to the apex domain.",
+      "confidence": "high",
+      "source": "Confirmed deployment and middleware setup during March 2026 work",
+      "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\middleware.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\site\\config.ts"
+      ]
+    },
+    {
+      "id": "KNOW-003",
+      "category": "data",
+      "fact": "Lead submissions are validated in /api/leads and inserted into Supabase table public.inbound_leads using server-side service-role access.",
+      "confidence": "high",
+      "source": "Repo inspection on 2026-03-24",
+      "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\supabase\\lead_capture_schema.sql"
+      ]
+    },
+    {
+      "id": "KNOW-004",
+      "category": "workflow",
+      "fact": "Because tsconfig includes .next/types, an isolated npm run typecheck may fail before generated build artifacts exist; build first or rerun typecheck after build output is present.",
+      "confidence": "high",
+      "source": "Observed repeatedly during March 2026 verification work",
+      "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\tsconfig.json"
+      ]
+    },
+    {
+      "id": "KNOW-005",
+      "category": "design",
+      "fact": "The site should feel industrial, premium, and investor-grade rather than like a local roofer site or a generic eco startup.",
+      "confidence": "high",
+      "source": "Confirmed user direction and existing site goals",
+      "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\README.md",
+        "D:\\Playground\\roofingrecyclers-site\\content\\site-content.ts"
+      ]
+    },
+    {
+      "id": "KNOW-006",
+      "category": "content",
+      "fact": "Public investor-facing copy should frame regulatory, policy, and manufacturer advantages carefully and avoid specific unverified claims.",
+      "confidence": "high",
+      "source": "Confirmed writing approach from investor-page work",
+      "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\investors\\page.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\content\\site-content.ts"
+      ]
+    },
+    {
+      "id": "KNOW-007",
+      "category": "design",
+      "fact": "The home hero visual is sensitive to text density and should avoid nested narrow multi-column card layouts within the constrained right-hand hero column.",
+      "confidence": "high",
+      "source": "User feedback and follow-up hero visual fixes",
+      "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\hero-visual.tsx"
+      ]
+    },
+    {
+      "id": "KNOW-008",
+      "category": "expansion",
+      "fact": "The route structure already anticipates future contractor, manufacturer, municipality, certification, policy, locations, and news expansion.",
+      "confidence": "high",
+      "source": "Repo route inspection on 2026-03-24",
+      "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app"
+      ]
+    },
+    {
+      "id": "KNOW-009",
+      "category": "memory",
+      "fact": "docs/project-memory is the canonical durable memory location for this repo and should be read and updated at the start and end of each future session.",
+      "confidence": "high",
+      "source": "Project memory initialization decision on 2026-03-24",
+      "first_recorded_at": "2026-03-24T17:39:40.5860397-05:00",
+      "last_confirmed_at": "2026-03-24T17:39:40.5860397-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
+    }
+  ]
+}

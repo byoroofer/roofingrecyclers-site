@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+  "tasks": [
+    {
+      "task_id": "MEM-001",
+      "title": "Initialize durable project memory system",
+      "description": "Create the canonical JSON-based memory system in docs/project-memory and seed it with verified project state.",
+      "priority": "high",
+      "status": "complete",
+      "owner": "agent",
+      "created_at": "2026-03-24T17:39:40.5860397-05:00",
+      "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+      "dependencies": [],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ],
+      "notes": "Completed during memory-system initialization."
+    },
+    {
+      "task_id": "UI-001",
+      "title": "Continue home-page visual polish",
+      "description": "Keep refining the home hero and other dense sections until the user confirms the presentation feels investor-grade.",
+      "priority": "high",
+      "status": "active",
+      "owner": "agent",
+      "created_at": "2026-03-24T17:39:40.5860397-05:00",
+      "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+      "dependencies": [],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\page.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\hero-visual.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\cta-band.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\process-diagram.tsx"
+      ],
+      "notes": "User feedback explicitly flagged home-page text quality."
+    },
+    {
+      "task_id": "INV-001",
+      "title": "Build tighter investor funnel",
+      "description": "Add a stronger capital-partner conversion flow, likely including gated deck/data-room request handling and a more polished inquiry sequence.",
+      "priority": "high",
+      "status": "backlog",
+      "owner": "agent",
+      "created_at": "2026-03-24T17:39:40.5860397-05:00",
+      "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+      "dependencies": [],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\investors\\page.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx"
+      ],
+      "notes": "Previously discussed as a likely next feature area."
+    },
+    {
+      "task_id": "DATA-001",
+      "title": "Connect live impact metrics",
+      "description": "Replace planning-stage placeholders with real data sources, calculators, or dashboard-driven metrics when the data model is ready.",
+      "priority": "medium",
+      "status": "backlog",
+      "owner": "agent",
+      "created_at": "2026-03-24T17:39:40.5860397-05:00",
+      "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+      "dependencies": [],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\impact\\page.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\content\\site-content.ts"
+      ],
+      "notes": "Current impact metrics are intentionally placeholder-oriented."
+    },
+    {
+      "task_id": "CONTENT-001",
+      "title": "Expand authority-content system",
+      "description": "Develop the news, policy, and resource areas into a durable authority-building content engine.",
+      "priority": "medium",
+      "status": "backlog",
+      "owner": "agent",
+      "created_at": "2026-03-24T17:39:40.5860397-05:00",
+      "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+      "dependencies": [],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\news\\page.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\app\\policy\\page.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\app\\locations\\page.tsx"
+      ],
+      "notes": "Architecture is prepared, but full content systems are not built yet."
+    },
+    {
+      "task_id": "OPS-001",
+      "title": "Build lead-management/admin layer",
+      "description": "Add internal tooling or dashboards for reviewing, qualifying, and managing inbound leads stored in Supabase.",
+      "priority": "medium",
+      "status": "backlog",
+      "owner": "agent",
+      "created_at": "2026-03-24T17:39:40.5860397-05:00",
+      "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+      "dependencies": [],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\supabase\\lead_capture_schema.sql"
+      ],
+      "notes": "Lead capture exists, but no admin UI is in the repo yet."
+    },
+    {
+      "task_id": "QA-001",
+      "title": "Document and follow QA workflow for build and typecheck",
+      "description": "Keep the verified build/typecheck sequence explicit so future sessions do not misinterpret .next/types timing failures.",
+      "priority": "medium",
+      "status": "backlog",
+      "owner": "agent",
+      "created_at": "2026-03-24T17:39:40.5860397-05:00",
+      "updated_at": "2026-03-24T17:39:40.5860397-05:00",
+      "dependencies": [],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\README.md",
+        "D:\\Playground\\roofingrecyclers-site\\tsconfig.json"
+      ],
+      "notes": "Run build before an isolated typecheck or rerun typecheck after build output exists."
+    }
+  ]
+}

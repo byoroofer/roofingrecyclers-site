@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "mission": "Build and maintain a serious, investor-grade public platform for Roofing Recyclers that explains the asphalt shingle recycling / RAS opportunity, builds trust across stakeholders, and supports future platform expansion.",
+  "primary_goals": [
+    "Make the business model and RAS story immediately understandable.",
+    "Build credibility with investors, municipalities, manufacturers, contractors, and strategic partners.",
+    "Capture inbound leads through secure, structured forms.",
+    "Maintain an expandable architecture for future data, portal, certification, and content features."
+  ],
+  "secondary_goals": [
+    "Support SEO, accessibility, and performance best practices.",
+    "Preserve premium visual quality on mobile and desktop.",
+    "Keep marketing copy centralized and easy to revise."
+  ],
+  "non_goals": [
+    "Do not make the site feel like a local roofing contractor website.",
+    "Do not turn the public site into a fully built investor portal or blog engine yet.",
+    "Do not make unverified legal, policy, subsidy, or manufacturer claims."
+  ],
+  "hard_rules": [
+    "Use Next.js App Router with TypeScript.",
+    "Keep secrets server-side only.",
+    "Use Supabase service-role access only on the server for lead inserts.",
+    "Preserve the industrial-tech, high-end visual direction and avoid cheesy eco or stock-template vibes.",
+    "Store durable project memory in docs/project-memory as canonical local-and-repo-backed memory."
+  ],
+  "strong_preferences": [
+    "Centralize reusable marketing copy in content/site-content.ts.",
+    "Prefer reusable components over page-specific duplication.",
+    "Frame public copy carefully when discussing regulation, manufacturers, and policy momentum.",
+    "Deploy changes to production after meaningful UI or content fixes."
+  ],
+  "optional_preferences": [
+    "Use real, relevant photos sparingly when they strengthen credibility.",
+    "Prepare routes and architecture for future expansion even when placeholders remain lightweight."
+  ],
+  "business_constraints": [
+    "The site must speak to multiple stakeholder types without feeling generic.",
+    "Founder positioning matters and should communicate credibility without ego-heavy copy.",
+    "The public site should feel like the early face of a category-defining company."
+  ],
+  "technical_constraints": [
+    "Stack is Next.js App Router, TypeScript, Tailwind CSS, Framer Motion, Supabase, and Vercel.",
+    "Lead capture is backed by Supabase table public.inbound_leads.",
+    "Current typecheck flow depends on .next generated types and may require running build before a standalone typecheck."
+  ],
+  "compliance_notes": [
+    "Do not store guesses as facts in public copy or memory files.",
+    "Use careful wording around regulations, incentives, exemptions, and specific commercial relationships unless directly confirmed.",
+    "Maintain accessible markup and readable contrast."
+  ],
+  "definitions_of_done": [
+    "Requested changes are implemented in code.",
+    "Relevant project memory JSON files are updated with durable knowledge.",
+    "Build passes and typecheck passes in a valid sequence.",
+    "Production is redeployed when the change affects the live site."
+  ]
+}

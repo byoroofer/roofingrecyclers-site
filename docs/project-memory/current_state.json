@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "current_phase": "Post-launch MVP / live polish",
+  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on investor-facing business-plan content and home-page hero layout cleanup.",
+  "active_workstreams": [
+    {
+      "name": "Marketing site polish",
+      "status": "active",
+      "notes": "Home page and high-visibility sections are being refined to meet the intended investor-grade standard."
+    },
+    {
+      "name": "Investor / capital partner narrative",
+      "status": "active",
+      "notes": "Capital Partners page now includes RAS, business-plan, regulatory, and relationship framing."
+    },
+    {
+      "name": "Lead capture and infrastructure",
+      "status": "active",
+      "notes": "Supabase-backed form flow is implemented and deployed."
+    },
+    {
+      "name": "Project memory system",
+      "status": "active",
+      "notes": "Initialized on 2026-03-24 in docs/project-memory."
+    }
+  ],
+  "current_priorities": [
+    "Preserve durable project state in the new memory system.",
+    "Continue visual QA and refinement on the home page and other high-visibility sections.",
+    "Plan the next investor-funnel and authority-content features."
+  ],
+  "blockers": [],
+  "risks": [
+    "Visual quality still depends on human review across breakpoints; the user recently flagged home-page text layout quality.",
+    "Some future-facing metrics and impact statements are still placeholders until live data is connected.",
+    "Public-facing policy and relationship copy must remain careful to avoid overclaiming."
+  ],
+  "assumptions": [
+    "docs/project-memory is the canonical durable memory location for this repo.",
+    "roofingrecyclers.com remains the preferred canonical host, with www redirected.",
+    "The user wants this repo to remain clearly separate from unrelated ventures."
+  ],
+  "known_issues": [
+    "Standalone npm run typecheck can fail if executed before a build because tsconfig includes .next/types output; run build first or rerun typecheck after build.",
+    "Recent home-page layout changes have been deployed but still require user validation for final visual approval."
+  ],
+  "recent_changes": [
+    {
+      "timestamp": "2026-03-19T15:09:46-05:00",
+      "summary": "Added RAS and capital partner content, deck-based photos, and stronger investor/business-plan framing.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\investors\\page.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\content\\site-content.ts",
+        "D:\\Playground\\roofingrecyclers-site\\public\\images\\deck"
+      ]
+    },
+    {
+      "timestamp": "2026-03-19T15:17:40-05:00",
+      "summary": "Aligned site metadata and schema descriptions with RAS positioning.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\lib\\site\\config.ts"
+      ]
+    },
+    {
+      "timestamp": "2026-03-24T17:39:40.5860397-05:00",
+      "summary": "Initialized durable project memory system in docs/project-memory.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
+    }
+  ],
+  "next_steps": [
+    "Validate the current live home-page hero and overall responsive layout with the user.",
+    "Decide whether the next feature batch should focus on investor funnel improvements, authority content, or data/impact tooling.",
+    "Keep project memory updated at the end of each future session."
+  ],
+  "updated_at": "2026-03-24T17:39:40.5860397-05:00"
+}
