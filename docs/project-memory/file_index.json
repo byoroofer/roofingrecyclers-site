@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-24T18:57:07.9359634-05:00",
+  "updated_at": "2026-03-25T08:35:08.4262304-05:00",
   "files": [
     {
       "path": "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\project_profile.json",
@@ -86,8 +86,8 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
       "purpose": "Server-side SMTP notification helper for lead submissions.",
       "criticality": "high",
-      "last_touched": "2026-03-24T18:57:07.9359634-05:00",
-      "notes": "Defaults recipient to warephoto@yahoo.com and skips sending unless SMTP env vars are configured.",
+      "last_touched": "2026-03-25T08:35:08.4262304-05:00",
+      "notes": "Uses Yahoo SMTP for lead notifications and now labels sender/subject as 'Roofing Recyclers Contact Form'.",
       "classification": "server-side"
     },
     {

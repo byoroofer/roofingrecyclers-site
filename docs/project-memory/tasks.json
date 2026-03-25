@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-25T08:07:54.9911497-05:00",
+  "updated_at": "2026-03-25T08:35:08.4262304-05:00",
   "tasks": [
     {
       "task_id": "MEM-001",
@@ -133,6 +133,24 @@
         "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
       ],
       "notes": "Completed after a valid Yahoo app password verified successfully, was added locally and to Vercel production, production redeployed, and notification-path tests succeeded."
+    },
+    {
+      "task_id": "OPS-003",
+      "title": "Tighten notification observability",
+      "description": "If inbox visibility remains inconsistent, add a lightweight audit trail or clearer success/failure logging around notification delivery attempts without risking lead capture.",
+      "priority": "medium",
+      "status": "active",
+      "owner": "agent",
+      "created_at": "2026-03-25T08:35:08.4262304-05:00",
+      "updated_at": "2026-03-25T08:35:08.4262304-05:00",
+      "dependencies": [
+        "OPS-002"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
+      ],
+      "notes": "A user-reported live notification miss occurred even though the matching lead row exists in Supabase and current formatted SMTP sends still succeed."
     },
     {
       "task_id": "QA-001",

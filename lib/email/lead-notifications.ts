@@ -5,6 +5,7 @@ import nodemailer from "nodemailer";
 import type { LeadSchema } from "@/lib/validation/lead";
 
 const DEFAULT_NOTIFICATION_EMAIL = "warephoto@yahoo.com";
+const DEFAULT_FROM_NAME = "Roofing Recyclers Contact Form";
 
 const inquiryTypeLabels: Record<LeadSchema["inquiryType"], string> = {
   investor: "Investor / Capital Partner",
@@ -60,9 +61,13 @@ function getMailConfig() {
   };
 }
 
+function buildFromHeader(from: string) {
+  return `"${DEFAULT_FROM_NAME}" <${from}>`;
+}
+
 function buildTextBody(lead: LeadSchema) {
   return [
-    "New Roofing Recyclers lead received",
+    "Roofing Recyclers Contact Form submission",
     "",
     `Inquiry type: ${inquiryTypeLabels[lead.inquiryType]}`,
     `Full name: ${lead.fullName}`,
@@ -74,7 +79,7 @@ function buildTextBody(lead: LeadSchema) {
     `Interest area: ${formatOptionalValue(lead.interestArea)}`,
     `Source page: ${formatOptionalValue(lead.sourcePage)}`,
     "",
-    "Message:",
+      "Message:",
     lead.message,
   ].join("\n");
 }
@@ -94,7 +99,7 @@ function buildHtmlBody(lead: LeadSchema) {
 
   return `
     <div style="font-family: Arial, sans-serif; color: #132019; line-height: 1.6;">
-      <h1 style="font-size: 20px; margin-bottom: 16px;">New Roofing Recyclers lead</h1>
+      <h1 style="font-size: 20px; margin-bottom: 16px;">Roofing Recyclers Contact Form</h1>
       <table style="border-collapse: collapse; width: 100%; max-width: 720px;">
         <tbody>
           ${rows
@@ -130,10 +135,10 @@ export async function sendLeadNotificationEmail(lead: LeadSchema) {
   });
 
   await transporter.sendMail({
-    from: config.from,
+    from: buildFromHeader(config.from),
     html: buildHtmlBody(lead),
     replyTo: lead.email,
-    subject: `[Roofing Recyclers] ${inquiryTypeLabels[lead.inquiryType]} inquiry from ${lead.fullName}`,
+    subject: `Roofing Recyclers Contact Form | ${inquiryTypeLabels[lead.inquiryType]} inquiry from ${lead.fullName}`,
     text: buildTextBody(lead),
     to: config.to,
   });

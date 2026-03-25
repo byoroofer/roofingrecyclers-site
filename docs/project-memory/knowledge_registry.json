@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-25T08:07:54.9911497-05:00",
+  "updated_at": "2026-03-25T08:35:08.4262304-05:00",
   "records": [
     {
       "id": "KNOW-001",
@@ -284,6 +284,23 @@
         "D:\\Playground\\roofingrecyclers-site\\.env.local",
         "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
         "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
+      ]
+    },
+    {
+      "id": "KNOW-018",
+      "category": "operations",
+      "fact": "Lead-notification emails now use 'Roofing Recyclers Contact Form' as the visible sender name and subject prefix. A live submission on March 25, 2026 definitely reached Supabase, and a current-format SMTP send was accepted by Yahoo, so if emails are still not visible the remaining issue is likely inbox placement or the lack of explicit notification audit logging rather than lead capture failure.",
+      "confidence": "medium",
+      "source": "Live lead inspection and current-format SMTP test on 2026-03-25",
+      "first_recorded_at": "2026-03-25T08:35:08.4262304-05:00",
+      "last_confirmed_at": "2026-03-25T08:35:08.4262304-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts"
       ]
     }
   ]

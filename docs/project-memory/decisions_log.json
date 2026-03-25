@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-25T08:07:54.9911497-05:00",
+  "updated_at": "2026-03-25T08:35:08.4262304-05:00",
   "decisions": [
     {
       "id": "DEC-20260319-001",
@@ -192,6 +192,23 @@
       "related_files": [
         "D:\\Playground\\roofingrecyclers-site\\.env.local",
         "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
+      ]
+    },
+    {
+      "id": "DEC-20260325-003",
+      "timestamp": "2026-03-25T08:35:08.4262304-05:00",
+      "title": "Label lead notifications as Roofing Recyclers Contact Form",
+      "decision": "Use 'Roofing Recyclers Contact Form' as the visible sender name and subject prefix for lead-notification emails.",
+      "reason": "The inbox notification should be immediately recognizable as a contact-form message rather than a generic system email.",
+      "alternatives_considered": [
+        "Keep the generic '[Roofing Recyclers]' subject prefix",
+        "Change only the subject while leaving the sender as the raw Yahoo address"
+      ],
+      "impact": "Future contact-form emails should present more clearly in the inbox and be easier to search for by name.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
         "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
       ]
     }

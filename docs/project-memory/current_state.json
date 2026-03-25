@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "current_phase": "Post-launch MVP / live polish",
-  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on rebuilding the home-page hero visual, initializing the durable project memory system, and successfully activating Yahoo SMTP lead notification emails on top of the existing Supabase capture flow.",
+  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on rebuilding the home-page hero visual, activating Yahoo SMTP lead notification emails, and updating the email sender/subject branding to read 'Roofing Recyclers Contact Form'.",
   "active_workstreams": [
     {
       "name": "Marketing site polish",
@@ -16,7 +16,7 @@
     {
       "name": "Lead capture and infrastructure",
       "status": "active",
-      "notes": "Supabase-backed form flow is implemented and deployed. Yahoo SMTP is now active again after a valid app password was verified locally, applied to Vercel production, redeployed, and tested."
+      "notes": "Supabase-backed form flow is implemented and deployed. Yahoo SMTP is active, the sender/subject branding was updated to 'Roofing Recyclers Contact Form', and a recent live submission definitely reached Supabase even though the user did not see the expected inbox notification."
     },
     {
       "name": "Project memory system",
@@ -27,6 +27,7 @@
   "current_priorities": [
     "Use docs/project-memory as the first-read source of truth in future sessions.",
     "Validate the rebuilt home-page hero and continue visual QA on other high-visibility sections.",
+    "Confirm why a real live submission reached Supabase but was not visible in the Yahoo inbox despite current SMTP tests succeeding.",
     "Plan the next investor-funnel and authority-content features."
   ],
   "blockers": [],
@@ -34,7 +35,8 @@
     "Visual quality still depends on human review across breakpoints; the rebuilt home-page hero still needs user validation after deployment.",
     "Some future-facing metrics and impact statements are still placeholders until live data is connected.",
     "Public-facing policy and relationship copy must remain careful to avoid overclaiming.",
-    "SMTP is now working, but future password rotations need careful handling to avoid another Yahoo auth lockout."
+    "SMTP is now working, but future password rotations need careful handling to avoid another Yahoo auth lockout.",
+    "Inbox visibility may still be inconsistent even when SMTP accepts the message, so notification observability may need a stronger audit trail."
   ],
   "assumptions": [
     "docs/project-memory is the canonical durable memory location for this repo.",
@@ -45,7 +47,8 @@
     "Standalone npm run typecheck can fail if executed before a build because tsconfig includes .next/types output; run build first or rerun typecheck after build.",
     "The rebuilt home-page hero passed build and typecheck locally, but the user still needs to validate the visual result in production.",
     "Lead notifications are best-effort by design, so the lead insert remains the primary success path even if email ever fails again.",
-    "Previous non-app-password Yahoo credentials failed auth before the working app password was installed."
+    "Previous non-app-password Yahoo credentials failed auth before the working app password was installed.",
+    "A user-reported live notification miss still needs explanation even though the matching lead row exists and current formatted SMTP sends succeed."
   ],
   "recent_changes": [
     {
@@ -144,13 +147,22 @@
         "D:\\Playground\\roofingrecyclers-site\\.env.local",
         "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
       ]
+    },
+    {
+      "timestamp": "2026-03-25T08:35:08.4262304-05:00",
+      "summary": "Updated the notification sender/subject branding to 'Roofing Recyclers Contact Form', redeployed production, confirmed the user's latest live submission reached Supabase, and verified that the current formatted SMTP send is still accepted by Yahoo even though the user reported not seeing the notification email.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
     }
   ],
   "next_steps": [
     "Validate the rebuilt live home-page hero and overall responsive layout with the user after deployment finishes.",
     "Monitor the first real lead notifications and confirm they reach warephoto@yahoo.com as expected.",
+    "If notification visibility still looks inconsistent, add a lightweight notification audit trail or success logging around sendMail results.",
     "Decide whether the next feature batch should focus on investor funnel improvements, authority content, or data/impact tooling.",
     "Keep project memory updated at the end of each future session and commit memory changes when appropriate."
   ],
-  "updated_at": "2026-03-25T08:07:54.9911497-05:00"
+  "updated_at": "2026-03-25T08:35:08.4262304-05:00"
 }
