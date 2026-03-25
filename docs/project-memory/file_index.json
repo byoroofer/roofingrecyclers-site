@@ -83,19 +83,27 @@
       "classification": "user-facing"
     },
     {
+      "path": "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx",
+      "purpose": "Client-side lead form UI, field state, submit handling, and visible success/error feedback.",
+      "criticality": "high",
+      "last_touched": "2026-03-25T12:19:05.5650072-05:00",
+      "notes": "Now surfaces clearer success messaging and recognizes duplicate=true responses so identical retries do not look like failures.",
+      "classification": "user-facing"
+    },
+    {
       "path": "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
       "purpose": "Server-side API endpoint for lead submission validation and insert handling.",
       "criticality": "high",
-      "last_touched": "2026-03-25T11:51:17.5197310-05:00",
-      "notes": "Uses service-role Supabase access on the server, triggers best-effort SMTP notifications after successful inserts, and now appends production-verified notification audit notes into inbound_leads.notes.",
+      "last_touched": "2026-03-25T12:19:05.5650072-05:00",
+      "notes": "Uses service-role Supabase access on the server, detects identical rapid retries, triggers both internal and submitter-facing emails after successful inserts, and appends delivery audit notes into inbound_leads.notes.",
       "classification": "server-side"
     },
     {
       "path": "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
       "purpose": "Server-side SMTP notification helper for lead submissions.",
       "criticality": "high",
-      "last_touched": "2026-03-25T11:51:17.5197310-05:00",
-      "notes": "Uses Yahoo SMTP for lead notifications, labels sender/subject as 'Roofing Recyclers Contact Form', and now omits external replyTo headers because production verification showed that fixes Yahoo delivery for this mailbox setup.",
+      "last_touched": "2026-03-25T12:19:05.5650072-05:00",
+      "notes": "Uses Yahoo SMTP for both internal lead notifications and submitter confirmation emails, and omits external replyTo headers because production verification showed that fixes Yahoo delivery for this mailbox setup.",
       "classification": "server-side"
     },
     {

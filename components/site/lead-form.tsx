@@ -98,14 +98,22 @@ export function LeadForm({
         body: JSON.stringify(parsed.data),
       });
 
-      const result = (await response.json()) as { error?: string; success?: boolean };
+      const result = (await response.json()) as {
+        duplicate?: boolean;
+        error?: string;
+        success?: boolean;
+      };
 
       if (!response.ok || !result.success) {
         throw new Error(result.error ?? "Unable to submit your inquiry right now.");
       }
 
       setStatus("success");
-      setMessage("Your inquiry has been received. A team member will follow up shortly.");
+      setMessage(
+        result.duplicate
+          ? "This inquiry is already in our queue. No need to submit it again."
+          : "Your inquiry has been received. We will email a confirmation shortly and follow up directly.",
+      );
       setFormState({
         inquiryType: resolvedInquiryType,
         ...initialState,

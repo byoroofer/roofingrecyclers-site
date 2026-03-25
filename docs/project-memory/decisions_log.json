@@ -265,6 +265,25 @@
         "D:\\Playground\\roofingrecyclers-site\\app\\globals.css",
         "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx"
       ]
+    },
+    {
+      "id": "DEC-20260325-007",
+      "timestamp": "2026-03-25T12:19:05.5650072-05:00",
+      "title": "Send submitter confirmations and suppress identical rapid retries",
+      "decision": "After a lead is stored, send the internal notification to warephoto@yahoo.com and a separate confirmation email to the submitter. If an identical submission arrives within a short window, return success with duplicate=true and do not create or email a second lead.",
+      "reason": "The user wants every legitimate submitter to receive a confirmation, while also avoiding duplicate internal emails when someone retries the same submission because they are unsure it went through.",
+      "alternatives_considered": [
+        "Send only the internal notification and ask users to trust the on-page success state",
+        "Allow duplicate rows and handle duplicates manually in the inbox"
+      ],
+      "impact": "The live form now has clearer user feedback, a confirmation path for submitters, and a first-layer protection against duplicate email noise.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx"
+      ]
     }
   ]
 }

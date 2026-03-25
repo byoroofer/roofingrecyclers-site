@@ -79,6 +79,19 @@ function buildFromHeader(from: string) {
   return `"${DEFAULT_FROM_NAME}" <${from}>`;
 }
 
+function buildConfirmationTextBody(lead: LeadSchema) {
+  return [
+    "Roofing Recyclers received your submission.",
+    "",
+    `Thank you for reaching out, ${lead.fullName}.`,
+    "",
+    "A team member will review your inquiry and follow up directly.",
+    "If appropriate for your inquiry, we can send the prospectus in a later follow-up.",
+    "",
+    "This is an automated confirmation that your submission was received.",
+  ].join("\n");
+}
+
 function buildTextBody(lead: LeadSchema) {
   return [
     "Roofing Recyclers Contact Form submission",
@@ -134,7 +147,34 @@ function buildHtmlBody(lead: LeadSchema) {
   `;
 }
 
-export async function sendLeadNotificationEmail(lead: LeadSchema) {
+function buildConfirmationHtmlBody(lead: LeadSchema) {
+  return `
+    <div style="font-family: Arial, sans-serif; color: #132019; line-height: 1.6;">
+      <h1 style="font-size: 20px; margin-bottom: 16px;">Roofing Recyclers</h1>
+      <p style="margin: 0 0 14px;">We received your submission.</p>
+      <p style="margin: 0 0 14px;">Thank you for reaching out, ${escapeHtml(lead.fullName)}.</p>
+      <p style="margin: 0 0 14px;">
+        A team member will review your inquiry and follow up directly. If appropriate for your inquiry,
+        we can send the prospectus in a later follow-up.
+      </p>
+      <p style="margin: 22px 0 0; color: #4d5f56; font-size: 14px;">
+        This is an automated confirmation that your submission was received.
+      </p>
+    </div>
+  `;
+}
+
+async function sendLeadEmail({
+  html,
+  recipient,
+  subject,
+  text,
+}: {
+  html: string;
+  recipient: string;
+  subject: string;
+  text: string;
+}) {
   const config = getMailConfig();
 
   if (!config) {
@@ -142,7 +182,7 @@ export async function sendLeadNotificationEmail(lead: LeadSchema) {
       delivered: false as const,
       skipped: true as const,
       reason: "missing_config" as const,
-      recipient: process.env.LEAD_NOTIFICATION_EMAIL ?? DEFAULT_NOTIFICATION_EMAIL,
+      recipient,
     } satisfies LeadNotificationResult;
   }
 
@@ -155,16 +195,34 @@ export async function sendLeadNotificationEmail(lead: LeadSchema) {
 
   const info = await transporter.sendMail({
     from: buildFromHeader(config.from),
-    html: buildHtmlBody(lead),
-    subject: `Roofing Recyclers Contact Form | ${inquiryTypeLabels[lead.inquiryType]} inquiry from ${lead.fullName}`,
-    text: buildTextBody(lead),
-    to: config.to,
+    html,
+    subject,
+    text,
+    to: recipient,
   });
 
   return {
     delivered: true as const,
     skipped: false as const,
     messageId: info.messageId,
-    recipient: config.to,
+    recipient,
   } satisfies LeadNotificationResult;
+}
+
+export async function sendLeadNotificationEmail(lead: LeadSchema) {
+  return sendLeadEmail({
+    html: buildHtmlBody(lead),
+    recipient: process.env.LEAD_NOTIFICATION_EMAIL ?? DEFAULT_NOTIFICATION_EMAIL,
+    subject: `Roofing Recyclers Contact Form | ${inquiryTypeLabels[lead.inquiryType]} inquiry from ${lead.fullName}`,
+    text: buildTextBody(lead),
+  });
+}
+
+export async function sendLeadConfirmationEmail(lead: LeadSchema) {
+  return sendLeadEmail({
+    html: buildConfirmationHtmlBody(lead),
+    recipient: lead.email,
+    subject: "Roofing Recyclers | Submission received",
+    text: buildConfirmationTextBody(lead),
+  });
 }

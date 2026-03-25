@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "current_phase": "Post-launch MVP / live polish",
-  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on rebuilding the home-page hero visual, activating Yahoo SMTP lead notification emails, updating the sender/subject branding to read 'Roofing Recyclers Contact Form', proving via live lead-row audit notes that Yahoo rejects the external replyTo pattern with '550 Request failed; Mailbox unavailable', deploying the no-replyTo fix so a fresh production lead row recorded notification=sent with a Yahoo message ID, and then correcting the shared form-control contrast by moving inputs and dropdowns to a light-field/dark-text treatment.",
+  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on rebuilding the home-page hero visual, activating Yahoo SMTP lead notification emails, updating the sender/subject branding to read 'Roofing Recyclers Contact Form', proving via live lead-row audit notes that Yahoo rejects the external replyTo pattern with '550 Request failed; Mailbox unavailable', deploying the no-replyTo fix so a fresh production lead row recorded notification=sent with a Yahoo message ID, correcting the shared form-control contrast by moving inputs and dropdowns to a light-field/dark-text treatment, and then adding a submitter confirmation email plus a short-window duplicate-submission guard.",
   "active_workstreams": [
     {
       "name": "Marketing site polish",
@@ -16,7 +16,7 @@
     {
       "name": "Lead capture and infrastructure",
       "status": "active",
-      "notes": "Supabase-backed form flow is implemented and deployed. Notification audit logging now runs in production via inbound_leads.notes, the Yahoo replyTo incompatibility was fixed by removing replyTo, and a fresh live submission recorded notification=sent."
+      "notes": "Supabase-backed form flow is implemented and deployed. Notification audit logging now runs in production via inbound_leads.notes, the Yahoo replyTo incompatibility was fixed by removing replyTo, submitter confirmation emails are now sent, and identical retries within a short window are treated as duplicates instead of new submissions."
     },
     {
       "name": "Project memory system",
@@ -27,7 +27,7 @@
   "current_priorities": [
     "Use docs/project-memory as the first-read source of truth in future sessions.",
     "Validate the rebuilt home-page hero and continue visual QA on other high-visibility sections, including the updated form controls.",
-    "Keep monitoring real contact-form submissions now that the Yahoo-compatible no-replyTo fix is live and verified.",
+    "Keep monitoring real contact-form submissions now that internal notifications, submitter confirmations, and the duplicate-submission guard are live.",
     "Plan the next investor-funnel and authority-content features."
   ],
   "blockers": [],
@@ -184,14 +184,24 @@
         "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx",
         "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
       ]
+    },
+    {
+      "timestamp": "2026-03-25T12:19:05.5650072-05:00",
+      "summary": "Added submitter confirmation emails, added a short-window duplicate-submission guard, verified that the first live submission recorded both internal_notification=sent and submitter_confirmation=sent, verified an immediate identical retry returned duplicate=true without creating a second row, and deleted the exact verification rows afterward.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
     }
   ],
   "next_steps": [
     "Validate the rebuilt live home-page hero and overall responsive layout with the user after deployment finishes.",
-    "Monitor the next real contact-form submissions and confirm they continue recording notification=sent in inbound_leads.notes.",
+    "Monitor the next real contact-form submissions and confirm they continue recording both internal and submitter confirmation outcomes in inbound_leads.notes.",
     "Confirm the updated dropdown and field contrast looks correct on desktop and mobile in the live form.",
     "Decide whether the next feature batch should focus on investor funnel improvements, authority content, or data/impact tooling.",
     "Keep project memory updated at the end of each future session and commit memory changes when appropriate."
   ],
-  "updated_at": "2026-03-25T12:00:38.9508080-05:00"
+  "updated_at": "2026-03-25T12:19:05.5650072-05:00"
 }

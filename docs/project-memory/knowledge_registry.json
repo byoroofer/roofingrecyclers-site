@@ -402,6 +402,40 @@
         "D:\\Playground\\roofingrecyclers-site\\app\\globals.css",
         "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx"
       ]
+    },
+    {
+      "id": "KNOW-025",
+      "category": "operations",
+      "fact": "The live form now sends two distinct emails on a normal successful submission: an internal notification to warephoto@yahoo.com and a submitter confirmation email. Both outcomes are recorded separately in inbound_leads.notes as internal_notification and submitter_confirmation.",
+      "confidence": "high",
+      "source": "Production verification on 2026-03-25",
+      "first_recorded_at": "2026-03-25T12:19:05.5650072-05:00",
+      "last_confirmed_at": "2026-03-25T12:19:05.5650072-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
+      ]
+    },
+    {
+      "id": "KNOW-026",
+      "category": "operations",
+      "fact": "Identical retries within a short window now return duplicate=true and do not create a second lead row or fire a second set of emails. This is the first-layer protection against users resubmitting because they are unsure the form worked.",
+      "confidence": "high",
+      "source": "Production duplicate-guard verification on 2026-03-25",
+      "first_recorded_at": "2026-03-25T12:19:05.5650072-05:00",
+      "last_confirmed_at": "2026-03-25T12:19:05.5650072-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx"
+      ]
     }
   ]
 }
