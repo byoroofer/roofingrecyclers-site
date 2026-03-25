@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-24T18:57:07.9359634-05:00",
+  "updated_at": "2026-03-25T00:19:42.3529108-05:00",
   "decisions": [
     {
       "id": "DEC-20260319-001",
@@ -156,6 +156,24 @@
       "related_files": [
         "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
         "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
+      ]
+    },
+    {
+      "id": "DEC-20260325-001",
+      "timestamp": "2026-03-25T00:19:42.3529108-05:00",
+      "title": "Disable SMTP notifications again after failed Yahoo authentication",
+      "decision": "When the supplied Yahoo credential failed SMTP authentication, remove SMTP_PASSWORD from local and Vercel production so the app returns to safe skip mode instead of repeatedly attempting bad logins.",
+      "reason": "Repeated auth failures can trigger provider throttling or lockouts, and the site already preserves leads safely in Supabase without email delivery.",
+      "alternatives_considered": [
+        "Leave the failing SMTP password active in production",
+        "Disable the entire lead submission path until email works"
+      ],
+      "impact": "Lead storage remains live while notifications stay paused until valid provider credentials are available.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts"
       ]
     }
   ]

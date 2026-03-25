@@ -16,7 +16,7 @@
     {
       "name": "Lead capture and infrastructure",
       "status": "active",
-      "notes": "Supabase-backed form flow is implemented and deployed; Yahoo SMTP settings are now prefilled locally, and live delivery is blocked only on the Yahoo app password and matching Vercel env values."
+      "notes": "Supabase-backed form flow is implemented and deployed. Yahoo SMTP is wired in code, but SMTP notifications were intentionally disabled again after a failed Yahoo auth attempt so the live site does not keep retrying bad credentials."
     },
     {
       "name": "Project memory system",
@@ -26,7 +26,7 @@
   ],
   "current_priorities": [
     "Use docs/project-memory as the first-read source of truth in future sessions.",
-    "Get the Yahoo app password so lead notifications can actually send to warephoto@yahoo.com.",
+    "Get a valid Yahoo app password or switch to another mail provider so lead notifications can actually send to warephoto@yahoo.com.",
     "Validate the rebuilt home-page hero and continue visual QA on other high-visibility sections.",
     "Plan the next investor-funnel and authority-content features."
   ],
@@ -35,7 +35,7 @@
     "Visual quality still depends on human review across breakpoints; the rebuilt home-page hero still needs user validation after deployment.",
     "Some future-facing metrics and impact statements are still placeholders until live data is connected.",
     "Public-facing policy and relationship copy must remain careful to avoid overclaiming.",
-    "Lead emails will not deliver until the Yahoo app password is added locally and in Vercel."
+    "Lead emails are temporarily disabled until a valid Yahoo app password or alternate provider credential is added."
   ],
   "assumptions": [
     "docs/project-memory is the canonical durable memory location for this repo.",
@@ -46,7 +46,8 @@
     "Standalone npm run typecheck can fail if executed before a build because tsconfig includes .next/types output; run build first or rerun typecheck after build.",
     "The rebuilt home-page hero passed build and typecheck locally, but the user still needs to validate the visual result in production.",
     "Lead notifications now exist in code, but they are intentionally best-effort and currently skip sending unless SMTP environment variables are present.",
-    "The local .env.local file is prefilled for Yahoo SMTP except for SMTP_PASSWORD."
+    "The local .env.local file is prefilled for Yahoo SMTP except for SMTP_PASSWORD.",
+    "A supplied Yahoo credential failed SMTP auth and was removed from local and production settings to prevent repeated bad login attempts."
   ],
   "recent_changes": [
     {
@@ -121,13 +122,21 @@
         "D:\\Playground\\roofingrecyclers-site\\.env.local",
         "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
       ]
+    },
+    {
+      "timestamp": "2026-03-25T00:19:42.3529108-05:00",
+      "summary": "Tested a supplied Yahoo SMTP credential, confirmed Yahoo auth failure (535 / AUTH005), removed SMTP_PASSWORD from local and Vercel production to disable bad retries, redeployed production, and deleted the exact SMTP test lead row created during verification.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
     }
   ],
   "next_steps": [
-    "Add the Yahoo app password locally and in Vercel so live lead emails can be delivered.",
+    "Add a valid Yahoo app password locally and in Vercel, or switch the mailer to another provider, so live lead emails can be delivered.",
     "Validate the rebuilt live home-page hero and overall responsive layout with the user after deployment finishes.",
     "Decide whether the next feature batch should focus on investor funnel improvements, authority content, or data/impact tooling.",
     "Keep project memory updated at the end of each future session and commit memory changes when appropriate."
   ],
-  "updated_at": "2026-03-24T19:32:29.0148758-05:00"
+  "updated_at": "2026-03-25T00:19:42.3529108-05:00"
 }

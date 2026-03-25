@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-24T19:32:29.0148758-05:00",
+  "updated_at": "2026-03-25T00:19:42.3529108-05:00",
   "records": [
     {
       "id": "KNOW-001",
@@ -225,6 +225,23 @@
       "source": "Local env update on 2026-03-24",
       "first_recorded_at": "2026-03-24T19:32:29.0148758-05:00",
       "last_confirmed_at": "2026-03-24T19:32:29.0148758-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
+      ]
+    },
+    {
+      "id": "KNOW-015",
+      "category": "operations",
+      "fact": "A Yahoo SMTP credential provided on March 25, 2026 failed authentication with '535 5.7.0 (#AUTH005) Too many bad auth attempts'. SMTP_PASSWORD was removed from local and Vercel production settings afterward so the app would stop retrying invalid Yahoo logins.",
+      "confidence": "high",
+      "source": "Direct SMTP verification and production cleanup on 2026-03-25",
+      "first_recorded_at": "2026-03-25T00:19:42.3529108-05:00",
+      "last_confirmed_at": "2026-03-25T00:19:42.3529108-05:00",
       "status": "active",
       "related_projects": [
         "roofingrecyclers-site"

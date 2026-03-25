@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-24T19:32:29.0148758-05:00",
+  "updated_at": "2026-03-25T00:19:42.3529108-05:00",
   "sessions": [
     {
       "session_id": "SESSION-20260324-173940-memory-init",
@@ -231,6 +231,58 @@
       "next_recommended_actions": [
         "Provide the Yahoo app password.",
         "Set the same SMTP values in Vercel and run one real lead submission test."
+      ]
+    },
+    {
+      "session_id": "SESSION-20260325-000500-smtp-verify",
+      "timestamp_start": "2026-03-25T00:05:00-05:00",
+      "timestamp_end": "2026-03-25T00:19:42.3529108-05:00",
+      "user_objective": "Finish the SMTP setup using the supplied Yahoo password and verify the production lead-notification path.",
+      "actions_taken": [
+        "Read docs/project-memory before updating secrets or infrastructure.",
+        "Updated .env.local with the supplied Yahoo password.",
+        "Added Yahoo SMTP variables to the Vercel production project and then corrected the initial values to avoid trailing-newline issues.",
+        "Triggered a fresh production deployment so Roofing Recyclers would pick up the SMTP environment variables.",
+        "Verified the supplied Yahoo credential directly against SMTP and received Yahoo auth failure 535 / AUTH005.",
+        "Sent one real production test submission and confirmed the public lead endpoint still returned success.",
+        "Removed SMTP_PASSWORD from local and Vercel production settings to stop repeated bad Yahoo auth attempts.",
+        "Triggered another production deployment so the invalid password was no longer active.",
+        "Deleted the exact SMTP test lead row created during verification.",
+        "Updated project memory with the failed auth finding and the resulting operational rollback."
+      ],
+      "files_created": [],
+      "files_modified": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\project_profile.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\current_state.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\decisions_log.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\session_log.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\tasks.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\knowledge_registry.json"
+      ],
+      "files_reviewed": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\.vercel\\project.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\current_state.json"
+      ],
+      "key_findings": [
+        "The supplied Yahoo credential was not valid for SMTP use and Yahoo returned 535 / AUTH005 after authentication attempts.",
+        "The live lead endpoint continued to work because Supabase insert remains the primary path and email is best-effort only.",
+        "Leaving an invalid SMTP password active in production would cause repeated Yahoo auth failures, so removing it was the safer operational choice.",
+        "The production test lead created during verification was removed."
+      ],
+      "decisions_added": [
+        "DEC-20260325-001"
+      ],
+      "memory_updates": [
+        "Recorded the failed Yahoo auth result, the rollback of SMTP_PASSWORD, and the fact that notifications are paused again pending valid credentials."
+      ],
+      "unresolved_items": [
+        "A valid Yahoo app password or alternate email provider credential is still needed for live notifications."
+      ],
+      "next_recommended_actions": [
+        "Provide a valid Yahoo app password generated for SMTP use, or choose another provider such as Resend or Google Workspace.",
+        "After valid credentials are available, add them to local and Vercel env, redeploy once, and rerun the end-to-end notification test."
       ]
     }
   ]
