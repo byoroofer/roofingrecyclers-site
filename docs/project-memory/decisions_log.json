@@ -211,6 +211,42 @@
       "related_files": [
         "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
       ]
+    },
+    {
+      "id": "DEC-20260325-004",
+      "timestamp": "2026-03-25T11:35:54.3275175-05:00",
+      "title": "Do not use external replyTo on Yahoo lead notifications",
+      "decision": "When sending lead notifications through the current Yahoo SMTP mailbox, do not set the submitter email as a replyTo header. Keep the submitter email visible in the message body instead.",
+      "reason": "A local SMTP matrix and a live production audit row both showed that Yahoo accepts simple and named-sender messages but rejects the same notification with an external replyTo header using '550 Request failed; Mailbox unavailable'.",
+      "alternatives_considered": [
+        "Keep replyTo and assume inbox placement was the problem",
+        "Switch mail providers immediately before isolating the message-shape failure"
+      ],
+      "impact": "The mailer logic should prioritize deliverability over one-click reply behavior until a different provider or mailbox setup is chosen.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts"
+      ]
+    },
+    {
+      "id": "DEC-20260325-005",
+      "timestamp": "2026-03-25T11:51:17.5197310-05:00",
+      "title": "Use inbound_leads.notes as the notification audit trail",
+      "decision": "Record notification delivery results in the existing inbound_leads.notes field rather than introducing a new table or schema change for the current MVP.",
+      "reason": "The user needed immediate observability on sent vs failed notifications without schema drift or a longer migration cycle.",
+      "alternatives_considered": [
+        "Add a dedicated notification_logs table",
+        "Rely only on server logs or inbox observation"
+      ],
+      "impact": "Production lead rows now preserve durable send/fail evidence, which makes future debugging faster and keeps the MVP schema stable.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\supabase\\lead_capture_schema.sql"
+      ]
     }
   ]
 }

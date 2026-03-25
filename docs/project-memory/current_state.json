@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "current_phase": "Post-launch MVP / live polish",
-  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on rebuilding the home-page hero visual, activating Yahoo SMTP lead notification emails, and updating the email sender/subject branding to read 'Roofing Recyclers Contact Form'.",
+  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on rebuilding the home-page hero visual, activating Yahoo SMTP lead notification emails, updating the sender/subject branding to read 'Roofing Recyclers Contact Form', proving via live lead-row audit notes that Yahoo rejects the external replyTo pattern with '550 Request failed; Mailbox unavailable', and then deploying the no-replyTo fix so a fresh production lead row recorded notification=sent with a Yahoo message ID.",
   "active_workstreams": [
     {
       "name": "Marketing site polish",
@@ -16,7 +16,7 @@
     {
       "name": "Lead capture and infrastructure",
       "status": "active",
-      "notes": "Supabase-backed form flow is implemented and deployed. Yahoo SMTP is active, the sender/subject branding was updated to 'Roofing Recyclers Contact Form', and a recent live submission definitely reached Supabase even though the user did not see the expected inbox notification."
+      "notes": "Supabase-backed form flow is implemented and deployed. Notification audit logging now runs in production via inbound_leads.notes, the Yahoo replyTo incompatibility was fixed by removing replyTo, and a fresh live submission recorded notification=sent."
     },
     {
       "name": "Project memory system",
@@ -27,7 +27,7 @@
   "current_priorities": [
     "Use docs/project-memory as the first-read source of truth in future sessions.",
     "Validate the rebuilt home-page hero and continue visual QA on other high-visibility sections.",
-    "Confirm why a real live submission reached Supabase but was not visible in the Yahoo inbox despite current SMTP tests succeeding.",
+    "Keep monitoring real contact-form submissions now that the Yahoo-compatible no-replyTo fix is live and verified.",
     "Plan the next investor-funnel and authority-content features."
   ],
   "blockers": [],
@@ -35,8 +35,8 @@
     "Visual quality still depends on human review across breakpoints; the rebuilt home-page hero still needs user validation after deployment.",
     "Some future-facing metrics and impact statements are still placeholders until live data is connected.",
     "Public-facing policy and relationship copy must remain careful to avoid overclaiming.",
-    "SMTP is now working, but future password rotations need careful handling to avoid another Yahoo auth lockout.",
-    "Inbox visibility may still be inconsistent even when SMTP accepts the message, so notification observability may need a stronger audit trail."
+    "Yahoo SMTP is working with the current message shape, but the mailbox setup is sensitive and will fail again if external replyTo is reintroduced.",
+    "Vercel CLI deploys were unstable during this debugging batch and one attempt returned 'Invalid JSON response' after a long run."
   ],
   "assumptions": [
     "docs/project-memory is the canonical durable memory location for this repo.",
@@ -48,7 +48,9 @@
     "The rebuilt home-page hero passed build and typecheck locally, but the user still needs to validate the visual result in production.",
     "Lead notifications are best-effort by design, so the lead insert remains the primary success path even if email ever fails again.",
     "Previous non-app-password Yahoo credentials failed auth before the working app password was installed.",
-    "A user-reported live notification miss still needs explanation even though the matching lead row exists and current formatted SMTP sends succeed."
+    "Yahoo rejects the contact-form notification when the message includes the external replyTo header, but the deployed no-replyTo fix now avoids that failure.",
+    "A local SMTP matrix proved that simple and named-sender Yahoo notifications succeed, while adding the external replyTo causes the failure.",
+    "Notification audit logging now runs in production through inbound_leads.notes and recorded a fresh notification=sent result after the fix."
   ],
   "recent_changes": [
     {
@@ -155,14 +157,31 @@
         "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
         "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
       ]
+    },
+    {
+      "timestamp": "2026-03-25T11:35:54.3275175-05:00",
+      "summary": "Added local notification audit logging to inbound_leads notes, proved via a live production test row that Yahoo rejects the external replyTo header with '550 Request failed; Mailbox unavailable', and implemented a local mailer fix that removes replyTo.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
+    },
+    {
+      "timestamp": "2026-03-25T11:51:17.5197310-05:00",
+      "summary": "Deployed the no-replyTo mailer fix to production, verified a fresh live lead row recorded notification=sent with a Yahoo message ID and recipient, and deleted the exact notification audit test rows from inbound_leads.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
     }
   ],
   "next_steps": [
     "Validate the rebuilt live home-page hero and overall responsive layout with the user after deployment finishes.",
-    "Monitor the first real lead notifications and confirm they reach warephoto@yahoo.com as expected.",
-    "If notification visibility still looks inconsistent, add a lightweight notification audit trail or success logging around sendMail results.",
+    "Monitor the next real contact-form submissions and confirm they continue recording notification=sent in inbound_leads.notes.",
     "Decide whether the next feature batch should focus on investor funnel improvements, authority content, or data/impact tooling.",
     "Keep project memory updated at the end of each future session and commit memory changes when appropriate."
   ],
-  "updated_at": "2026-03-25T08:35:08.4262304-05:00"
+  "updated_at": "2026-03-25T11:51:17.5197310-05:00"
 }

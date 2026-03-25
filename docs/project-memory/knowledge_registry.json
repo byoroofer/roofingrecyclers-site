@@ -302,6 +302,89 @@
         "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
         "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts"
       ]
+    },
+    {
+      "id": "KNOW-019",
+      "category": "operations",
+      "fact": "A live production test row on March 25, 2026 recorded notification=failed with the exact error '550 Request failed; Mailbox unavailable', proving the contact-form email problem was an SMTP delivery failure rather than a missing Supabase insert or a vague inbox-visibility issue.",
+      "confidence": "high",
+      "source": "Production lead-row audit note inspection on 2026-03-25",
+      "first_recorded_at": "2026-03-25T11:35:54.3275175-05:00",
+      "last_confirmed_at": "2026-03-25T11:35:54.3275175-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\supabase\\lead_capture_schema.sql"
+      ]
+    },
+    {
+      "id": "KNOW-020",
+      "category": "operations",
+      "fact": "For the current Yahoo mailbox setup, simple messages and named-sender messages succeed, but adding an external replyTo header causes Yahoo to reject the notification with '550 Request failed; Mailbox unavailable'. Removing replyTo is the current compatibility fix.",
+      "confidence": "high",
+      "source": "Local SMTP test matrix on 2026-03-25",
+      "first_recorded_at": "2026-03-25T11:35:54.3275175-05:00",
+      "last_confirmed_at": "2026-03-25T11:35:54.3275175-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
+      ]
+    },
+    {
+      "id": "KNOW-021",
+      "category": "operations",
+      "fact": "During the March 25, 2026 debugging batch, one Vercel CLI production deploy attempt returned 'Invalid JSON response' after a long run, so deployment verification should not rely on a single CLI success/failure message when debugging urgent mailer changes.",
+      "confidence": "medium",
+      "source": "Observed Vercel CLI behavior on 2026-03-25",
+      "first_recorded_at": "2026-03-25T11:35:54.3275175-05:00",
+      "last_confirmed_at": "2026-03-25T11:35:54.3275175-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\.vercel\\project.json"
+      ]
+    },
+    {
+      "id": "KNOW-022",
+      "category": "operations",
+      "fact": "The production contact-form mailer is now verified working after removing external replyTo. A fresh live lead row on March 25, 2026 recorded notification=sent, a Yahoo message ID, and recipient=warephoto@yahoo.com in inbound_leads.notes.",
+      "confidence": "high",
+      "source": "Production test submission and Supabase row inspection on 2026-03-25",
+      "first_recorded_at": "2026-03-25T11:51:17.5197310-05:00",
+      "last_confirmed_at": "2026-03-25T11:51:17.5197310-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
+      ]
+    },
+    {
+      "id": "KNOW-023",
+      "category": "operations",
+      "fact": "For this MVP, the existing inbound_leads.notes field is the canonical notification audit trail. It is sufficient to prove whether a submission was sent, skipped, or failed without changing the database schema.",
+      "confidence": "high",
+      "source": "Production deployment and verified audit-note usage on 2026-03-25",
+      "first_recorded_at": "2026-03-25T11:51:17.5197310-05:00",
+      "last_confirmed_at": "2026-03-25T11:51:17.5197310-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\supabase\\lead_capture_schema.sql"
+      ]
     }
   ]
 }

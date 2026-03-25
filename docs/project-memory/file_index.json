@@ -78,16 +78,16 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
       "purpose": "Server-side API endpoint for lead submission validation and insert handling.",
       "criticality": "high",
-      "last_touched": "2026-03-24T18:57:07.9359634-05:00",
-      "notes": "Uses service-role Supabase access on the server and now triggers best-effort SMTP notifications after successful inserts.",
+      "last_touched": "2026-03-25T11:51:17.5197310-05:00",
+      "notes": "Uses service-role Supabase access on the server, triggers best-effort SMTP notifications after successful inserts, and now appends production-verified notification audit notes into inbound_leads.notes.",
       "classification": "server-side"
     },
     {
       "path": "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
       "purpose": "Server-side SMTP notification helper for lead submissions.",
       "criticality": "high",
-      "last_touched": "2026-03-25T08:35:08.4262304-05:00",
-      "notes": "Uses Yahoo SMTP for lead notifications and now labels sender/subject as 'Roofing Recyclers Contact Form'.",
+      "last_touched": "2026-03-25T11:51:17.5197310-05:00",
+      "notes": "Uses Yahoo SMTP for lead notifications, labels sender/subject as 'Roofing Recyclers Contact Form', and now omits external replyTo headers because production verification showed that fixes Yahoo delivery for this mailbox setup.",
       "classification": "server-side"
     },
     {

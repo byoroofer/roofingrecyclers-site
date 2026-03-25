@@ -61,6 +61,20 @@ function getMailConfig() {
   };
 }
 
+type LeadNotificationResult =
+  | {
+      delivered: false;
+      skipped: true;
+      reason: "missing_config";
+      recipient: string;
+    }
+  | {
+      delivered: true;
+      skipped: false;
+      messageId: string;
+      recipient: string;
+    };
+
 function buildFromHeader(from: string) {
   return `"${DEFAULT_FROM_NAME}" <${from}>`;
 }
@@ -124,7 +138,12 @@ export async function sendLeadNotificationEmail(lead: LeadSchema) {
   const config = getMailConfig();
 
   if (!config) {
-    return { delivered: false, skipped: true as const };
+    return {
+      delivered: false as const,
+      skipped: true as const,
+      reason: "missing_config" as const,
+      recipient: process.env.LEAD_NOTIFICATION_EMAIL ?? DEFAULT_NOTIFICATION_EMAIL,
+    } satisfies LeadNotificationResult;
   }
 
   const transporter = nodemailer.createTransport({
@@ -134,14 +153,18 @@ export async function sendLeadNotificationEmail(lead: LeadSchema) {
     secure: config.secure,
   });
 
-  await transporter.sendMail({
+  const info = await transporter.sendMail({
     from: buildFromHeader(config.from),
     html: buildHtmlBody(lead),
-    replyTo: lead.email,
     subject: `Roofing Recyclers Contact Form | ${inquiryTypeLabels[lead.inquiryType]} inquiry from ${lead.fullName}`,
     text: buildTextBody(lead),
     to: config.to,
   });
 
-  return { delivered: true as const, skipped: false as const };
+  return {
+    delivered: true as const,
+    skipped: false as const,
+    messageId: info.messageId,
+    recipient: config.to,
+  } satisfies LeadNotificationResult;
 }
