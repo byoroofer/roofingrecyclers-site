@@ -47,7 +47,8 @@
     "The rebuilt home-page hero passed build and typecheck locally, but the user still needs to validate the visual result in production.",
     "Lead notifications now exist in code, but they are intentionally best-effort and currently skip sending unless SMTP environment variables are present.",
     "The local .env.local file is prefilled for Yahoo SMTP except for SMTP_PASSWORD.",
-    "A supplied Yahoo credential failed SMTP auth and was removed from local and production settings to prevent repeated bad login attempts."
+    "A supplied Yahoo credential failed SMTP auth and was removed from local and production settings to prevent repeated bad login attempts.",
+    "A second supplied Yahoo credential also failed local SMTP verification with the same Yahoo auth error, so it was not written into local or production config."
   ],
   "recent_changes": [
     {
@@ -130,6 +131,14 @@
         "D:\\Playground\\roofingrecyclers-site\\.env.local",
         "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
       ]
+    },
+    {
+      "timestamp": "2026-03-25T01:06:39.5127940-05:00",
+      "summary": "Verified a newly supplied Yahoo password directly against SMTP before changing config and received the same Yahoo auth failure (535 / AUTH005), so no local or Vercel SMTP_PASSWORD update was applied.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
     }
   ],
   "next_steps": [
@@ -138,5 +147,5 @@
     "Decide whether the next feature batch should focus on investor funnel improvements, authority content, or data/impact tooling.",
     "Keep project memory updated at the end of each future session and commit memory changes when appropriate."
   ],
-  "updated_at": "2026-03-25T00:19:42.3529108-05:00"
+  "updated_at": "2026-03-25T01:06:39.5127940-05:00"
 }

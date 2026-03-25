@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-25T00:19:42.3529108-05:00",
+  "updated_at": "2026-03-25T01:06:39.5127940-05:00",
   "sessions": [
     {
       "session_id": "SESSION-20260324-173940-memory-init",
@@ -283,6 +283,48 @@
       "next_recommended_actions": [
         "Provide a valid Yahoo app password generated for SMTP use, or choose another provider such as Resend or Google Workspace.",
         "After valid credentials are available, add them to local and Vercel env, redeploy once, and rerun the end-to-end notification test."
+      ]
+    },
+    {
+      "session_id": "SESSION-20260325-010000-second-smtp-check",
+      "timestamp_start": "2026-03-25T01:00:00-05:00",
+      "timestamp_end": "2026-03-25T01:06:39.5127940-05:00",
+      "user_objective": "Try a newly supplied Yahoo password and finish SMTP setup if the credential works.",
+      "actions_taken": [
+        "Read docs/project-memory before updating local or production secrets.",
+        "Confirmed Yahoo SMTP was still disabled after the previous failed credential.",
+        "Verified the newly supplied Yahoo password directly against SMTP before modifying any environment values.",
+        "Received the same Yahoo auth failure 535 / AUTH005.",
+        "Did not write the new password into .env.local or Vercel because it failed verification.",
+        "Updated project memory with the repeated-auth-failure result."
+      ],
+      "files_created": [],
+      "files_modified": [
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\project_profile.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\current_state.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\session_log.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\tasks.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\knowledge_registry.json"
+      ],
+      "files_reviewed": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\current_state.json"
+      ],
+      "key_findings": [
+        "The newly supplied Yahoo password failed with the same SMTP auth error as the prior credential.",
+        "Because verification was done before any config write, local and production settings remained unchanged and safe.",
+        "The strongest current inference is that a true Yahoo app password is still required."
+      ],
+      "decisions_added": [],
+      "memory_updates": [
+        "Recorded the second failed Yahoo SMTP check and updated the blocked-setup task."
+      ],
+      "unresolved_items": [
+        "A valid Yahoo app password or alternate mail-provider credential is still required."
+      ],
+      "next_recommended_actions": [
+        "Use a Yahoo-generated app password specifically meant for SMTP, or switch to another provider.",
+        "Only after a credential verifies locally should it be written into Vercel production."
       ]
     }
   ]

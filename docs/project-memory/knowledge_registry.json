@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-25T00:19:42.3529108-05:00",
+  "updated_at": "2026-03-25T01:06:39.5127940-05:00",
   "records": [
     {
       "id": "KNOW-001",
@@ -242,6 +242,23 @@
       "source": "Direct SMTP verification and production cleanup on 2026-03-25",
       "first_recorded_at": "2026-03-25T00:19:42.3529108-05:00",
       "last_confirmed_at": "2026-03-25T00:19:42.3529108-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
+      ]
+    },
+    {
+      "id": "KNOW-016",
+      "category": "operations",
+      "fact": "A second supplied Yahoo credential also failed local SMTP verification on March 25, 2026 with the same 535 / AUTH005 error. It was not written into local or production config. Inference: the project likely needs an actual Yahoo app password rather than another account-style password.",
+      "confidence": "medium",
+      "source": "Direct SMTP verification on 2026-03-25",
+      "first_recorded_at": "2026-03-25T01:06:39.5127940-05:00",
+      "last_confirmed_at": "2026-03-25T01:06:39.5127940-05:00",
       "status": "active",
       "related_projects": [
         "roofingrecyclers-site"
