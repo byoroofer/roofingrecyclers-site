@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-25T01:06:39.5127940-05:00",
+  "updated_at": "2026-03-25T08:07:54.9911497-05:00",
   "records": [
     {
       "id": "KNOW-001",
@@ -265,6 +265,24 @@
       ],
       "related_files": [
         "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
+      ]
+    },
+    {
+      "id": "KNOW-017",
+      "category": "operations",
+      "fact": "A Yahoo app password verified successfully on March 25, 2026. SMTP_PASSWORD is now restored in local env and Vercel production, the live site was redeployed, a direct SMTP send succeeded, and a production form submission succeeded with SMTP active.",
+      "confidence": "high",
+      "source": "Direct SMTP verification, Vercel deployment, and live submission test on 2026-03-25",
+      "first_recorded_at": "2026-03-25T08:07:54.9911497-05:00",
+      "last_confirmed_at": "2026-03-25T08:07:54.9911497-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
         "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
       ]
     }

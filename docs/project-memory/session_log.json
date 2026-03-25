@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-25T01:06:39.5127940-05:00",
+  "updated_at": "2026-03-25T08:07:54.9911497-05:00",
   "sessions": [
     {
       "session_id": "SESSION-20260324-173940-memory-init",
@@ -325,6 +325,56 @@
       "next_recommended_actions": [
         "Use a Yahoo-generated app password specifically meant for SMTP, or switch to another provider.",
         "Only after a credential verifies locally should it be written into Vercel production."
+      ]
+    },
+    {
+      "session_id": "SESSION-20260325-075500-yahoo-app-password-success",
+      "timestamp_start": "2026-03-25T07:55:00-05:00",
+      "timestamp_end": "2026-03-25T08:07:54.9911497-05:00",
+      "user_objective": "Apply the Yahoo app password, finish SMTP setup, and verify that live lead notifications are operational.",
+      "actions_taken": [
+        "Read docs/project-memory before modifying local or production configuration.",
+        "Verified the Yahoo app password directly against SMTP before changing config.",
+        "Updated .env.local with the verified app password.",
+        "Restored SMTP_PASSWORD in Vercel production.",
+        "Triggered a fresh production deployment so Roofing Recyclers would use the working SMTP secret.",
+        "Submitted one real production test lead and confirmed the endpoint returned success.",
+        "Sent one direct SMTP verification email successfully.",
+        "Deleted the exact production test lead row created during verification.",
+        "Updated project memory to record that Yahoo SMTP notifications are now active."
+      ],
+      "files_created": [],
+      "files_modified": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\project_profile.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\current_state.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\decisions_log.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\session_log.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\tasks.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\knowledge_registry.json"
+      ],
+      "files_reviewed": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\current_state.json"
+      ],
+      "key_findings": [
+        "The supplied 16-character Yahoo app password authenticated successfully.",
+        "Production SMTP notifications can be safely enabled once the credential is verified locally first.",
+        "A direct SMTP send succeeded, and the production lead endpoint also succeeded after the redeploy.",
+        "The verification test lead row was removed from Supabase after testing."
+      ],
+      "decisions_added": [
+        "DEC-20260325-002"
+      ],
+      "memory_updates": [
+        "Recorded that Yahoo SMTP is active again with a verified app password and updated the SMTP setup task to complete."
+      ],
+      "unresolved_items": [
+        "Inbox delivery should still be confirmed on the first real lead or by checking warephoto@yahoo.com for the verification messages."
+      ],
+      "next_recommended_actions": [
+        "Confirm the verification email and the live form notification arrive in the Yahoo inbox.",
+        "Keep the verify-locally-first workflow for any future SMTP password rotation."
       ]
     }
   ]

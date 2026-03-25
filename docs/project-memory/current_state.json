@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "current_phase": "Post-launch MVP / live polish",
-  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on rebuilding the home-page hero visual, initializing the durable project memory system, and adding optional SMTP-based lead notification emails on top of the existing Supabase capture flow.",
+  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on rebuilding the home-page hero visual, initializing the durable project memory system, and successfully activating Yahoo SMTP lead notification emails on top of the existing Supabase capture flow.",
   "active_workstreams": [
     {
       "name": "Marketing site polish",
@@ -16,7 +16,7 @@
     {
       "name": "Lead capture and infrastructure",
       "status": "active",
-      "notes": "Supabase-backed form flow is implemented and deployed. Yahoo SMTP is wired in code, but SMTP notifications were intentionally disabled again after a failed Yahoo auth attempt so the live site does not keep retrying bad credentials."
+      "notes": "Supabase-backed form flow is implemented and deployed. Yahoo SMTP is now active again after a valid app password was verified locally, applied to Vercel production, redeployed, and tested."
     },
     {
       "name": "Project memory system",
@@ -26,7 +26,6 @@
   ],
   "current_priorities": [
     "Use docs/project-memory as the first-read source of truth in future sessions.",
-    "Get a valid Yahoo app password or switch to another mail provider so lead notifications can actually send to warephoto@yahoo.com.",
     "Validate the rebuilt home-page hero and continue visual QA on other high-visibility sections.",
     "Plan the next investor-funnel and authority-content features."
   ],
@@ -35,7 +34,7 @@
     "Visual quality still depends on human review across breakpoints; the rebuilt home-page hero still needs user validation after deployment.",
     "Some future-facing metrics and impact statements are still placeholders until live data is connected.",
     "Public-facing policy and relationship copy must remain careful to avoid overclaiming.",
-    "Lead emails are temporarily disabled until a valid Yahoo app password or alternate provider credential is added."
+    "SMTP is now working, but future password rotations need careful handling to avoid another Yahoo auth lockout."
   ],
   "assumptions": [
     "docs/project-memory is the canonical durable memory location for this repo.",
@@ -45,10 +44,8 @@
   "known_issues": [
     "Standalone npm run typecheck can fail if executed before a build because tsconfig includes .next/types output; run build first or rerun typecheck after build.",
     "The rebuilt home-page hero passed build and typecheck locally, but the user still needs to validate the visual result in production.",
-    "Lead notifications now exist in code, but they are intentionally best-effort and currently skip sending unless SMTP environment variables are present.",
-    "The local .env.local file is prefilled for Yahoo SMTP except for SMTP_PASSWORD.",
-    "A supplied Yahoo credential failed SMTP auth and was removed from local and production settings to prevent repeated bad login attempts.",
-    "A second supplied Yahoo credential also failed local SMTP verification with the same Yahoo auth error, so it was not written into local or production config."
+    "Lead notifications are best-effort by design, so the lead insert remains the primary success path even if email ever fails again.",
+    "Previous non-app-password Yahoo credentials failed auth before the working app password was installed."
   ],
   "recent_changes": [
     {
@@ -139,13 +136,21 @@
         "D:\\Playground\\roofingrecyclers-site\\.env.local",
         "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
       ]
+    },
+    {
+      "timestamp": "2026-03-25T08:07:54.9911497-05:00",
+      "summary": "Verified a Yahoo app password successfully, restored SMTP_PASSWORD locally and in Vercel production, redeployed the live site, sent a direct SMTP test email successfully, confirmed the production lead endpoint succeeded with SMTP active, and deleted the exact test lead row afterward.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
     }
   ],
   "next_steps": [
-    "Add a valid Yahoo app password locally and in Vercel, or switch the mailer to another provider, so live lead emails can be delivered.",
     "Validate the rebuilt live home-page hero and overall responsive layout with the user after deployment finishes.",
+    "Monitor the first real lead notifications and confirm they reach warephoto@yahoo.com as expected.",
     "Decide whether the next feature batch should focus on investor funnel improvements, authority content, or data/impact tooling.",
     "Keep project memory updated at the end of each future session and commit memory changes when appropriate."
   ],
-  "updated_at": "2026-03-25T01:06:39.5127940-05:00"
+  "updated_at": "2026-03-25T08:07:54.9911497-05:00"
 }

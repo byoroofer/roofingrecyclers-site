@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-25T00:19:42.3529108-05:00",
+  "updated_at": "2026-03-25T08:07:54.9911497-05:00",
   "decisions": [
     {
       "id": "DEC-20260319-001",
@@ -169,11 +169,30 @@
         "Disable the entire lead submission path until email works"
       ],
       "impact": "Lead storage remains live while notifications stay paused until valid provider credentials are available.",
-      "status": "active",
+      "status": "superseded",
       "supersedes": null,
       "related_files": [
         "D:\\Playground\\roofingrecyclers-site\\.env.local",
         "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts"
+      ]
+    },
+    {
+      "id": "DEC-20260325-002",
+      "timestamp": "2026-03-25T08:07:54.9911497-05:00",
+      "title": "Re-enable Yahoo SMTP only after direct credential verification",
+      "decision": "A Yahoo app password should be verified directly against SMTP before it is restored in local or production config. Once verification succeeds, restore SMTP_PASSWORD, redeploy production, and keep the best-effort email design in place.",
+      "reason": "Earlier bad credentials caused Yahoo auth failures, so production should only be re-enabled after a credential proves valid.",
+      "alternatives_considered": [
+        "Write every new password directly into Vercel first and test afterward",
+        "Abandon Yahoo immediately instead of retrying with an app password"
+      ],
+      "impact": "SMTP is now active again with a verified Yahoo app password and a safer operational workflow for future rotations.",
+      "status": "active",
+      "supersedes": "DEC-20260325-001",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
       ]
     }
   ]
