@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-24T18:57:07.9359634-05:00",
+  "updated_at": "2026-03-24T19:32:29.0148758-05:00",
   "records": [
     {
       "id": "KNOW-001",
@@ -215,6 +215,23 @@
         "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
         "D:\\Playground\\roofingrecyclers-site\\.env.example",
         "D:\\Playground\\roofingrecyclers-site\\README.md"
+      ]
+    },
+    {
+      "id": "KNOW-014",
+      "category": "operations",
+      "fact": "Yahoo SMTP is the chosen delivery path for lead notifications. The local .env.local file is prefilled with Yahoo host, port, secure mode, sender, and recipient values; the remaining missing secret is the Yahoo app password.",
+      "confidence": "high",
+      "source": "Local env update on 2026-03-24",
+      "first_recorded_at": "2026-03-24T19:32:29.0148758-05:00",
+      "last_confirmed_at": "2026-03-24T19:32:29.0148758-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\.env.local",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
       ]
     }
   ]
