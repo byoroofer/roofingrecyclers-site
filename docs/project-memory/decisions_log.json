@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-24T17:50:42.0510837-05:00",
+  "updated_at": "2026-03-24T18:57:07.9359634-05:00",
   "decisions": [
     {
       "id": "DEC-20260319-001",
@@ -138,6 +138,24 @@
       "related_files": [
         "D:\\Playground\\roofingrecyclers-site\\components\\site\\hero-visual.tsx",
         "D:\\Playground\\roofingrecyclers-site\\app\\page.tsx"
+      ]
+    },
+    {
+      "id": "DEC-20260324-005",
+      "timestamp": "2026-03-24T18:57:07.9359634-05:00",
+      "title": "Send lead notifications as a best-effort step after Supabase insert",
+      "decision": "Keep the existing Supabase insert as the primary success path and send SMTP email notifications only after the lead is stored, without failing the public submission if the mailer is unavailable.",
+      "reason": "Lead capture is more important than notification delivery, and SMTP credentials may be absent or temporarily unavailable.",
+      "alternatives_considered": [
+        "Fail the form submission if the notification email cannot be sent",
+        "Replace the DB insert with an email-only workflow"
+      ],
+      "impact": "Inbound leads remain safely stored in Supabase while the team can add email visibility without risking lost submissions.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
       ]
     }
   ]

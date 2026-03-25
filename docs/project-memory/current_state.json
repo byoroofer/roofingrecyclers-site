@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "current_phase": "Post-launch MVP / live polish",
-  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on investor-facing business-plan content, rebuilding the home-page hero visual after direct user screenshot feedback, and initializing the durable project memory system.",
+  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on rebuilding the home-page hero visual, initializing the durable project memory system, and adding optional SMTP-based lead notification emails on top of the existing Supabase capture flow.",
   "active_workstreams": [
     {
       "name": "Marketing site polish",
@@ -16,7 +16,7 @@
     {
       "name": "Lead capture and infrastructure",
       "status": "active",
-      "notes": "Supabase-backed form flow is implemented and deployed."
+      "notes": "Supabase-backed form flow is implemented and deployed; SMTP notification support is now coded but still needs credentials for live delivery."
     },
     {
       "name": "Project memory system",
@@ -26,6 +26,7 @@
   ],
   "current_priorities": [
     "Use docs/project-memory as the first-read source of truth in future sessions.",
+    "Configure SMTP credentials so lead notifications can actually send to warephoto@yahoo.com.",
     "Validate the rebuilt home-page hero and continue visual QA on other high-visibility sections.",
     "Plan the next investor-funnel and authority-content features."
   ],
@@ -33,7 +34,8 @@
   "risks": [
     "Visual quality still depends on human review across breakpoints; the rebuilt home-page hero still needs user validation after deployment.",
     "Some future-facing metrics and impact statements are still placeholders until live data is connected.",
-    "Public-facing policy and relationship copy must remain careful to avoid overclaiming."
+    "Public-facing policy and relationship copy must remain careful to avoid overclaiming.",
+    "Lead emails will not deliver until SMTP credentials are configured in local env and Vercel."
   ],
   "assumptions": [
     "docs/project-memory is the canonical durable memory location for this repo.",
@@ -42,7 +44,8 @@
   ],
   "known_issues": [
     "Standalone npm run typecheck can fail if executed before a build because tsconfig includes .next/types output; run build first or rerun typecheck after build.",
-    "The rebuilt home-page hero passed build and typecheck locally, but the user still needs to validate the visual result in production."
+    "The rebuilt home-page hero passed build and typecheck locally, but the user still needs to validate the visual result in production.",
+    "Lead notifications now exist in code, but they are intentionally best-effort and currently skip sending unless SMTP environment variables are present."
   ],
   "recent_changes": [
     {
@@ -90,12 +93,23 @@
         "D:\\Playground\\roofingrecyclers-site\\components\\site\\hero-visual.tsx",
         "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
       ]
+    },
+    {
+      "timestamp": "2026-03-24T18:57:07.9359634-05:00",
+      "summary": "Added optional SMTP-based lead notification emails that trigger after the existing Supabase lead insert, defaulting the recipient to warephoto@yahoo.com when mailer configuration is present; build and typecheck passed.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
+        "D:\\Playground\\roofingrecyclers-site\\.env.example",
+        "D:\\Playground\\roofingrecyclers-site\\README.md"
+      ]
     }
   ],
   "next_steps": [
+    "Add SMTP credentials locally and in Vercel so live lead emails can be delivered.",
     "Validate the rebuilt live home-page hero and overall responsive layout with the user after deployment finishes.",
     "Decide whether the next feature batch should focus on investor funnel improvements, authority content, or data/impact tooling.",
     "Keep project memory updated at the end of each future session and commit memory changes when appropriate."
   ],
-  "updated_at": "2026-03-24T17:54:46.5263633-05:00"
+  "updated_at": "2026-03-24T18:57:07.9359634-05:00"
 }

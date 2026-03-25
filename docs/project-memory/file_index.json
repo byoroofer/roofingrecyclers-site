@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-24T17:50:42.0510837-05:00",
+  "updated_at": "2026-03-24T18:57:07.9359634-05:00",
   "files": [
     {
       "path": "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\project_profile.json",
@@ -78,8 +78,16 @@
       "path": "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
       "purpose": "Server-side API endpoint for lead submission validation and insert handling.",
       "criticality": "high",
-      "last_touched": "2026-03-24T17:43:37.2381162-05:00",
-      "notes": "Uses service-role Supabase access on the server.",
+      "last_touched": "2026-03-24T18:57:07.9359634-05:00",
+      "notes": "Uses service-role Supabase access on the server and now triggers best-effort SMTP notifications after successful inserts.",
+      "classification": "server-side"
+    },
+    {
+      "path": "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
+      "purpose": "Server-side SMTP notification helper for lead submissions.",
+      "criticality": "high",
+      "last_touched": "2026-03-24T18:57:07.9359634-05:00",
+      "notes": "Defaults recipient to warephoto@yahoo.com and skips sending unless SMTP env vars are configured.",
       "classification": "server-side"
     },
     {
@@ -96,6 +104,14 @@
       "criticality": "medium",
       "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "SEO and structured-data descriptions depend on this file.",
+      "classification": "config"
+    },
+    {
+      "path": "D:\\Playground\\roofingrecyclers-site\\.env.example",
+      "purpose": "Template environment configuration for local and Vercel setup.",
+      "criticality": "high",
+      "last_touched": "2026-03-24T18:57:07.9359634-05:00",
+      "notes": "Now includes SMTP and lead-notification variables alongside Supabase settings.",
       "classification": "config"
     },
     {

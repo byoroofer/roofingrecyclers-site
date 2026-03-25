@@ -29,6 +29,13 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
+LEAD_NOTIFICATION_EMAIL=warephoto@yahoo.com
+EMAIL_FROM=
+SMTP_HOST=
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=
+SMTP_PASSWORD=
 ```
 
 If Supabase labels your public browser key as a "publishable key", put that value in
@@ -82,9 +89,22 @@ Lead submissions are stored in `public.inbound_leads` with fields for:
 The public form posts to `/api/leads`, and the route inserts into Supabase using the service-role
 key on the server.
 
+If SMTP is configured, the same route also sends a notification email to
+`LEAD_NOTIFICATION_EMAIL`. The default notification target in this repo is
+`warephoto@yahoo.com`.
+
+For Yahoo SMTP, use:
+
+- `SMTP_HOST=smtp.mail.yahoo.com`
+- `SMTP_PORT=465`
+- `SMTP_SECURE=true`
+- `SMTP_USER=<your Yahoo address>`
+- `SMTP_PASSWORD=<your Yahoo app password>`
+- `EMAIL_FROM=<your Yahoo address or approved sender>`
+
 ## Deploy to Vercel
 
 1. Push the project to your GitHub repo
 2. Import the repo into Vercel
-3. Add the four required environment variables
+3. Add the required environment variables for Supabase and, if desired, SMTP notifications
 4. Point your custom domain to the Vercel project after the first successful deployment

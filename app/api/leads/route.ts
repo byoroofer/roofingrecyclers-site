@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { sendLeadNotificationEmail } from "@/lib/email/lead-notifications";
 import { createServiceRoleClient } from "@/lib/supabase/service-role";
 import { leadSchema } from "@/lib/validation/lead";
 import type { Database } from "@/types/database";
@@ -54,6 +55,12 @@ export async function POST(request: Request) {
 
     if (error) {
       throw error;
+    }
+
+    try {
+      await sendLeadNotificationEmail(lead);
+    } catch (notificationError) {
+      console.error("Lead stored but email notification failed.", notificationError);
     }
 
     return NextResponse.json({ success: true });

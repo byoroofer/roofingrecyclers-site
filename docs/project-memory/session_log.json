@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-24T17:54:46.5263633-05:00",
+  "updated_at": "2026-03-24T18:57:07.9359634-05:00",
   "sessions": [
     {
       "session_id": "SESSION-20260324-173940-memory-init",
@@ -122,6 +122,68 @@
       "next_recommended_actions": [
         "Have the user recheck the live home page and call out any remaining weak spots.",
         "Continue tightening any remaining weak text compositions on the highest-visibility home-page sections."
+      ]
+    },
+    {
+      "session_id": "SESSION-20260324-181500-lead-email",
+      "timestamp_start": "2026-03-24T18:15:00-05:00",
+      "timestamp_end": "2026-03-24T18:57:07.9359634-05:00",
+      "user_objective": "Send contact form notifications to warephoto@yahoo.com while preserving the existing Supabase lead capture flow.",
+      "actions_taken": [
+        "Read docs/project-memory before editing code.",
+        "Confirmed the existing lead form posts to /api/leads and currently only inserts into Supabase.",
+        "Installed nodemailer and @types/nodemailer.",
+        "Added lib/email/lead-notifications.ts for server-side SMTP notifications.",
+        "Updated app/api/leads/route.ts to send email notifications after a successful DB insert without failing the form if the mailer is unavailable.",
+        "Updated .env.example and README.md with SMTP and lead-notification configuration details.",
+        "Ran npm run build successfully.",
+        "Reran npm run typecheck after build generation completed and it passed.",
+        "Updated project memory with the new lead-notification architecture and remaining SMTP setup requirement."
+      ],
+      "files_created": [
+        "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts"
+      ],
+      "files_modified": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\.env.example",
+        "D:\\Playground\\roofingrecyclers-site\\README.md",
+        "D:\\Playground\\roofingrecyclers-site\\package.json",
+        "D:\\Playground\\roofingrecyclers-site\\package-lock.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\project_profile.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\current_state.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\decisions_log.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\session_log.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\tasks.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\file_index.json",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\knowledge_registry.json"
+      ],
+      "files_reviewed": [
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
+        "D:\\Playground\\roofingrecyclers-site\\supabase\\lead_capture_schema.sql",
+        "D:\\Playground\\roofingrecyclers-site\\.env.example",
+        "D:\\Playground\\roofingrecyclers-site\\README.md",
+        "D:\\Playground\\roofingrecyclers-site\\tsconfig.json"
+      ],
+      "key_findings": [
+        "The contact form already stored leads correctly in Supabase and only needed a secondary notification path.",
+        "The safest implementation is to keep the Supabase insert as primary and make email notification best-effort.",
+        "The intended recipient is warephoto@yahoo.com, but live email delivery still depends on SMTP credentials that are not yet configured.",
+        "The repo's typecheck verification must run after build output exists; a parallel run can produce false missing-file errors."
+      ],
+      "decisions_added": [
+        "DEC-20260324-005"
+      ],
+      "memory_updates": [
+        "Recorded the new SMTP notification architecture, default recipient, and live configuration dependency.",
+        "Added a blocked task for supplying SMTP credentials."
+      ],
+      "unresolved_items": [
+        "Live email delivery is still blocked until SMTP credentials are configured locally and in Vercel."
+      ],
+      "next_recommended_actions": [
+        "Add SMTP settings for the chosen sender account or provider.",
+        "Push and deploy this batch, then test a real contact submission end to end."
       ]
     }
   ]
