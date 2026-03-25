@@ -385,6 +385,23 @@
         "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
         "D:\\Playground\\roofingrecyclers-site\\supabase\\lead_capture_schema.sql"
       ]
+    },
+    {
+      "id": "KNOW-024",
+      "category": "design",
+      "fact": "On this dark marketing shell, shared form controls should use a light field with dark text and explicit select option styling. This is the safer cross-browser pattern for readable dropdowns than relying on dark translucent fields.",
+      "confidence": "high",
+      "source": "User feedback and production form-contrast fix on 2026-03-25",
+      "first_recorded_at": "2026-03-25T12:00:38.9508080-05:00",
+      "last_confirmed_at": "2026-03-25T12:00:38.9508080-05:00",
+      "status": "active",
+      "related_projects": [
+        "roofingrecyclers-site"
+      ],
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\globals.css",
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx"
+      ]
     }
   ]
 }

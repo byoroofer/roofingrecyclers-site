@@ -247,6 +247,24 @@
         "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
         "D:\\Playground\\roofingrecyclers-site\\supabase\\lead_capture_schema.sql"
       ]
+    },
+    {
+      "id": "DEC-20260325-006",
+      "timestamp": "2026-03-25T12:00:38.9508080-05:00",
+      "title": "Use light form controls on the dark marketing shell",
+      "decision": "Shared form inputs, textareas, and selects should use a near-white background with dark text and readable option lists instead of dark translucent fields.",
+      "reason": "Native dropdown surfaces were rendering with poor contrast against the previous dark-field treatment, making form options hard to read.",
+      "alternatives_considered": [
+        "Keep dark fields and only special-case select text color",
+        "Patch the lead form component one field at a time"
+      ],
+      "impact": "All shared form controls now have reliable contrast on desktop and mobile, and future forms can reuse the same readable styling.",
+      "status": "active",
+      "supersedes": null,
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\globals.css",
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx"
+      ]
     }
   ]
 }

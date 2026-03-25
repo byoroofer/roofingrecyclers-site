@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "current_phase": "Post-launch MVP / live polish",
-  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on rebuilding the home-page hero visual, activating Yahoo SMTP lead notification emails, updating the sender/subject branding to read 'Roofing Recyclers Contact Form', proving via live lead-row audit notes that Yahoo rejects the external replyTo pattern with '550 Request failed; Mailbox unavailable', and then deploying the no-replyTo fix so a fresh production lead row recorded notification=sent with a Yahoo message ID.",
+  "summary": "The public marketing site is live on roofingrecyclers.com with core stakeholder pages, Supabase-backed lead capture, centralized content, and an expanded RAS/capital-partner narrative. Recent work focused on rebuilding the home-page hero visual, activating Yahoo SMTP lead notification emails, updating the sender/subject branding to read 'Roofing Recyclers Contact Form', proving via live lead-row audit notes that Yahoo rejects the external replyTo pattern with '550 Request failed; Mailbox unavailable', deploying the no-replyTo fix so a fresh production lead row recorded notification=sent with a Yahoo message ID, and then correcting the shared form-control contrast by moving inputs and dropdowns to a light-field/dark-text treatment.",
   "active_workstreams": [
     {
       "name": "Marketing site polish",
       "status": "active",
-      "notes": "Home page and high-visibility sections are being refined to meet the intended investor-grade standard."
+      "notes": "Home page and high-visibility sections are being refined to meet the intended investor-grade standard. Shared form controls now use a light field with dark text so dropdowns remain readable on the dark shell."
     },
     {
       "name": "Investor / capital partner narrative",
@@ -26,7 +26,7 @@
   ],
   "current_priorities": [
     "Use docs/project-memory as the first-read source of truth in future sessions.",
-    "Validate the rebuilt home-page hero and continue visual QA on other high-visibility sections.",
+    "Validate the rebuilt home-page hero and continue visual QA on other high-visibility sections, including the updated form controls.",
     "Keep monitoring real contact-form submissions now that the Yahoo-compatible no-replyTo fix is live and verified.",
     "Plan the next investor-funnel and authority-content features."
   ],
@@ -175,13 +175,23 @@
         "D:\\Playground\\roofingrecyclers-site\\lib\\email\\lead-notifications.ts",
         "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
       ]
+    },
+    {
+      "timestamp": "2026-03-25T12:00:38.9508080-05:00",
+      "summary": "Updated the shared form-control styles so inputs, textareas, and select dropdowns use a light field with dark text and readable option lists, then redeployed production.",
+      "related_files": [
+        "D:\\Playground\\roofingrecyclers-site\\app\\globals.css",
+        "D:\\Playground\\roofingrecyclers-site\\components\\site\\lead-form.tsx",
+        "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory"
+      ]
     }
   ],
   "next_steps": [
     "Validate the rebuilt live home-page hero and overall responsive layout with the user after deployment finishes.",
     "Monitor the next real contact-form submissions and confirm they continue recording notification=sent in inbound_leads.notes.",
+    "Confirm the updated dropdown and field contrast looks correct on desktop and mobile in the live form.",
     "Decide whether the next feature batch should focus on investor funnel improvements, authority content, or data/impact tooling.",
     "Keep project memory updated at the end of each future session and commit memory changes when appropriate."
   ],
-  "updated_at": "2026-03-25T11:51:17.5197310-05:00"
+  "updated_at": "2026-03-25T12:00:38.9508080-05:00"
 }

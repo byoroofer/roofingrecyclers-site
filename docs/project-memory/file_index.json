@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-03-25T08:35:08.4262304-05:00",
+  "updated_at": "2026-03-25T12:00:38.9508080-05:00",
   "files": [
     {
       "path": "D:\\Playground\\roofingrecyclers-site\\docs\\project-memory\\project_profile.json",
@@ -73,6 +73,14 @@
       "last_touched": "2026-03-24T17:43:37.2381162-05:00",
       "notes": "Primary content registry for route copy and card content.",
       "classification": "docs"
+    },
+    {
+      "path": "D:\\Playground\\roofingrecyclers-site\\app\\globals.css",
+      "purpose": "Shared visual system and reusable CSS utilities for the marketing shell, including form controls.",
+      "criticality": "high",
+      "last_touched": "2026-03-25T12:00:38.9508080-05:00",
+      "notes": "Form controls now use a near-white field with dark text and readable select option styling to avoid contrast issues on the dark shell.",
+      "classification": "user-facing"
     },
     {
       "path": "D:\\Playground\\roofingrecyclers-site\\app\\api\\leads\\route.ts",
